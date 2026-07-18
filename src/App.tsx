@@ -147,6 +147,8 @@ function Painel() {
     voiceURI,
     setVoice,
     testVoice,
+    wakeAtivo,
+    setWakeAtivo,
   } = useVoiceAssistant();
 
   const social = useSocial();
@@ -176,6 +178,8 @@ function Painel() {
             voiceURI={voiceURI}
             setVoice={setVoice}
             testVoice={testVoice}
+            wakeAtivo={wakeAtivo}
+            setWakeAtivo={setWakeAtivo}
           />
           <div className="bottom">
             <EmailsCell onOpen={() => setDetail("emails")} />

@@ -39,6 +39,32 @@ function createRecognition(): SpeechRecognitionLike | null {
 const SILENCE_MS = 2500;
 
 const VOICE_STORAGE_KEY = "vedo.voiceURI";
+const WAKE_STORAGE_KEY = "vedo.wake";
+
+// Palavra de ativação: "olá vedo", "oi vedo", "alô vedo" (com variações que o
+// reconhecedor costuma transcrever). Aceita comando na mesma frase:
+// "olá vedo, me dá o briefing" já dispara o briefing.
+const HOTWORD = /\b(ol[aá]|oi|al[oô])[\s,.!]*(vedo|vedô|veto|vê\s?do|vedu)\b/i;
+
+// Erros da Web Speech API viram instruções acionáveis (especialmente no iPhone,
+// onde "service-not-allowed" significa Ditado desativado no iOS).
+function erroAmigavel(code: string): string {
+  const ios = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  switch (code) {
+    case "service-not-allowed":
+      return ios
+        ? "O iPhone está bloqueando o reconhecimento de voz do navegador. Ative em Ajustes → Geral → Teclado → ATIVAR DITADO (e deixe a Siri ligada em Ajustes → Siri). Depois feche e reabra esta página."
+        : "O navegador bloqueou o serviço de voz. Confira a permissão de microfone do site e tente de novo.";
+    case "not-allowed":
+      return "Permissão de microfone negada. Toque no ícone de cadeado/aA na barra de endereço, permita o Microfone e recarregue.";
+    case "audio-capture":
+      return "Nenhum microfone encontrado no aparelho.";
+    case "network":
+      return "O reconhecimento de voz precisa de internet e não conseguiu conectar. Tente de novo em instantes.";
+    default:
+      return `Erro no reconhecimento de voz: ${code}`;
+  }
+}
 
 // Vozes em português disponíveis no navegador/SO.
 function ptVoices(): SpeechSynthesisVoice[] {
@@ -237,7 +263,12 @@ export function useVoiceAssistant() {
     rec.onerror = (e: any) => {
       // 'no-speech' e 'aborted' são normais (silêncio inicial / reinício) — ignora.
       if (e.error === "no-speech" || e.error === "aborted") return;
-      setError(`Erro no reconhecimento de voz: ${e.error}`);
+      // Erros de permissão/serviço são fatais: não adianta reiniciar a escuta
+      // (entraria num loop de erro). Para e explica o que fazer.
+      if (e.error === "not-allowed" || e.error === "service-not-allowed" || e.error === "audio-capture") {
+        stoppingRef.current = true;
+      }
+      setError(erroAmigavel(e.error));
     };
     rec.onend = () => {
       const text = finalTextRef.current.trim();
@@ -267,6 +298,100 @@ export function useVoiceAssistant() {
     setStatus("listening");
     rec.start();
   }, [status, process, clearSilenceTimer, stopListening]);
+
+  // ---------- modo "Olá VEDO" (palavra de ativação) ----------
+  // Uma escuta de fundo, leve, que só procura a saudação. Ao ouvir "olá vedo"
+  // começa a escuta de verdade; se vier comando junto ("olá vedo, briefing"),
+  // processa direto. Pausa sozinha enquanto o VEDO ouve/pensa/fala.
+  const [wakeAtivo, setWakeAtivoState] = useState(
+    () => localStorage.getItem(WAKE_STORAGE_KEY) === "1",
+  );
+  const wakeRef = useRef<SpeechRecognitionLike | null>(null);
+  const wakeAtivoRef = useRef(wakeAtivo);
+  wakeAtivoRef.current = wakeAtivo;
+  const statusRef = useRef(status);
+  statusRef.current = status;
+
+  const pararWake = useCallback(() => {
+    const w = wakeRef.current;
+    wakeRef.current = null;
+    if (w) {
+      w.onresult = null;
+      w.onerror = null;
+      w.onend = null;
+      try {
+        w.abort();
+      } catch {
+        /* já parada */
+      }
+    }
+  }, []);
+
+  const iniciarWake = useCallback(() => {
+    if (wakeRef.current || !wakeAtivoRef.current || statusRef.current !== "idle") return;
+    const rec = createRecognition();
+    if (!rec) return;
+
+    rec.onresult = (e: any) => {
+      let texto = "";
+      for (let i = 0; i < e.results.length; i++) texto += e.results[i][0].transcript;
+      const m = texto.match(HOTWORD);
+      if (!m) return;
+      const resto = texto.slice((m.index ?? 0) + m[0].length).trim();
+      pararWake();
+      // Veio comando na mesma frase? Processa direto; senão, abre a escuta.
+      if (resto.replace(/[^\p{L}\p{N}]/gu, "").length >= 3) {
+        void process(resto);
+      } else {
+        void startListening();
+      }
+    };
+    rec.onerror = (e: any) => {
+      if (e.error === "no-speech" || e.error === "aborted") return;
+      if (e.error === "not-allowed" || e.error === "service-not-allowed" || e.error === "audio-capture") {
+        // Sem permissão não há o que insistir: desliga o modo e explica.
+        wakeAtivoRef.current = false;
+        setWakeAtivoState(false);
+        localStorage.setItem(WAKE_STORAGE_KEY, "0");
+        setError(erroAmigavel(e.error));
+        pararWake();
+      }
+    };
+    rec.onend = () => {
+      // O navegador encerra a escuta sozinho de tempos em tempos — religa
+      // enquanto o modo estiver ativo e o microfone estiver livre.
+      if (wakeRef.current === rec) {
+        wakeRef.current = null;
+        setTimeout(() => iniciarWake(), 400);
+      }
+    };
+
+    wakeRef.current = rec;
+    try {
+      rec.start();
+    } catch {
+      wakeRef.current = null;
+    }
+  }, [pararWake, process, startListening]);
+
+  const setWakeAtivo = useCallback(
+    (on: boolean) => {
+      wakeAtivoRef.current = on;
+      setWakeAtivoState(on);
+      localStorage.setItem(WAKE_STORAGE_KEY, on ? "1" : "0");
+      // Liga já dentro do clique (gesto do usuário — exigência do iOS/Safari).
+      if (on) iniciarWake();
+      else pararWake();
+    },
+    [iniciarWake, pararWake],
+  );
+
+  // Mantém a escuta de fundo em dia com o estado: só roda quando idle.
+  useEffect(() => {
+    if (wakeAtivo && status === "idle") iniciarWake();
+    else pararWake();
+    return pararWake;
+  }, [wakeAtivo, status, iniciarWake, pararWake]);
 
   const toggleMic = useCallback(() => {
     if (status === "listening") {
@@ -309,5 +434,7 @@ export function useVoiceAssistant() {
     voiceURI,
     setVoice,
     testVoice,
+    wakeAtivo,
+    setWakeAtivo,
   };
 }

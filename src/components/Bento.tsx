@@ -332,6 +332,8 @@ export function VoiceCell({
   voiceURI,
   setVoice,
   testVoice,
+  wakeAtivo,
+  setWakeAtivo,
 }: {
   status: AssistantStatus;
   onMicToggle: () => void;
@@ -339,11 +341,15 @@ export function VoiceCell({
   voiceURI: string;
   setVoice: (uri: string) => void;
   testVoice: () => void;
+  wakeAtivo: boolean;
+  setWakeAtivo: (on: boolean) => void;
 }) {
+  const statusTxt =
+    status === "idle" && wakeAtivo ? "Diga “Olá VEDO” ou toque" : STATUS_TXT[status];
   return (
     <div className="cell voice-cell">
-      <VoiceOrb status={status} size={150} onClick={onMicToggle} title={STATUS_TXT[status]} />
-      <div className="vc-status">{STATUS_TXT[status]}</div>
+      <VoiceOrb status={status} size={150} onClick={onMicToggle} title={statusTxt} />
+      <div className="vc-status">{statusTxt}</div>
       <div className="vc-controls">
         <select
           className="voice-select"
@@ -361,6 +367,15 @@ export function VoiceCell({
           ▶
         </button>
       </div>
+      <label className="wake-toggle" title="Com isso ligado, basta dizer “Olá VEDO” com a página aberta">
+        <input
+          type="checkbox"
+          checked={wakeAtivo}
+          onChange={(e) => setWakeAtivo(e.target.checked)}
+        />
+        <span className="wake-track"><i /></span>
+        Ativar dizendo “Olá VEDO”
+      </label>
     </div>
   );
 }
