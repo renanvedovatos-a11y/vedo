@@ -50,7 +50,10 @@ import {
   diagnosticoWebhook,
 } from "./instagram.mjs";
 
-const PORT = process.env.PORT || 3001;
+// Em produção (Render) a plataforma dita a porta via PORT. Em dev a porta é
+// SEMPRE 3001 — ferramentas locais podem exportar PORT (ex.: 5173, a do Vite)
+// e não podem desviar o backend.
+const PORT = process.env.NODE_ENV === "production" ? process.env.PORT || 3001 : 3001;
 // Cérebro da voz: prioriza LATÊNCIA (resposta falada precisa ser imediata).
 // Haiku 4.5 é o mais rápido e dá conta de triagem, roteamento de ferramentas e
 // respostas curtas. A geração de conteúdo (aba Temas) segue no Opus, em temas.mjs.

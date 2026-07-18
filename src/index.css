@@ -2097,6 +2097,51 @@ body {
   .aud-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- celular: UMA coluna, nada sobreposto ---------- */
+@media (max-width: 640px) {
+  .app { padding: 12px 12px 20px; gap: 10px; }
+
+  /* topo em duas linhas: marca+abas em cima, status embaixo */
+  .topbar { flex-wrap: wrap; row-gap: 10px; }
+  .topbar-left { width: 100%; justify-content: space-between; gap: 10px; }
+  .view-tabs button { padding: 5px 11px; font-size: 12.5px; }
+  .view-tabs button.on { padding: 4px 10px; }
+  .topbar-right { width: 100%; justify-content: flex-end; gap: 10px; }
+  .clock { margin-right: auto; letter-spacing: 0.5px; }
+  .mic-pill { white-space: nowrap; font-size: 12px; }
+
+  /* cards empilhados em coluna única */
+  .bento { grid-template-columns: 1fr; gap: 10px; }
+  .bottom { grid-template-columns: 1fr; gap: 10px; }
+  .cell { overflow: hidden; }
+
+  /* números confortáveis e métricas distribuídas na largura */
+  .hero-num { font-size: 34px; margin-top: 8px; }
+  .hero-three { gap: 10px; justify-content: space-between; margin-top: 12px; }
+  .hero-three > div { min-width: 0; }
+  .hero-three .n { font-size: 15px; }
+  .mlabel { letter-spacing: 1px; }
+
+  .voice-cell { min-height: 0; padding: 20px 14px 16px; }
+  .agenda-cell, .tasks-today, .emails-cell { min-height: 0; }
+  .chat-log { max-height: 38vh; }
+
+  /* modais ocupando a tela quase toda, com respiro */
+  .overlay { padding: 10px; }
+  .detail { padding: 18px 16px; border-radius: 16px; max-height: 92vh; }
+  .detail-head h2 { font-size: 17px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .media-grid { grid-template-columns: 1fr; }
+  .aud-grid { gap: 12px; }
+  .camp-nums { gap: 10px; column-gap: 14px; }
+
+  /* calendário do mês: células menores, eventos como pontos */
+  .cal-grid { gap: 3px; }
+  .cal-chip { font-size: 8.5px; padding: 1px 3px; }
+  .cal-nav { margin-right: 6px; }
+  .cal-nav button { padding: 3px 9px; font-size: 12px; }
+}
+
 /* ---------- tela de login ---------- */
 .login-tela {
   min-height: 100vh;
