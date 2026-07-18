@@ -1,0 +1,45 @@
+# Blueprint do Render — sobe o VEDO como um único serviço web (API + painel).
+# No Render: New → Blueprint → conecte o repositório do GitHub. As chaves
+# (sync:false) você preenche no painel do Render, nunca no Git.
+services:
+  - type: web
+    name: vedo
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node server/index.mjs
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: NODE_ENV
+        value: production
+      # --- segredos (preencha no painel do Render) ---
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: WINDSOR_API_KEY
+        sync: false
+      - key: META_WEBHOOK_VERIFY_TOKEN
+        sync: false
+      - key: META_APP_SECRET
+        sync: false
+      - key: IG_ACCESS_TOKEN
+        sync: false
+      - key: IG_USER_ID
+        sync: false
+      # --- Supabase (armazenamento) ---
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      # --- login do painel + URL pública ---
+      - key: VEDO_SENHA
+        sync: false
+      - key: VEDO_SESSION_SECRET
+        sync: false
+      - key: PUBLIC_URL
+        sync: false
