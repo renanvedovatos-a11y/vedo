@@ -22,15 +22,19 @@ interface SpeechRecognitionLike {
   onspeechstart: (() => void) | null;
 }
 
+const IS_IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
 function createRecognition(): SpeechRecognitionLike | null {
   const Ctor =
     (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
   if (!Ctor) return null;
   const rec: SpeechRecognitionLike = new Ctor();
   rec.lang = "pt-BR";
-  // Contínuo: não encerra na primeira pausa. Quem decide o fim é o timer de
-  // silêncio (abaixo) ou o clique manual no microfone.
-  rec.continuous = true;
+  // Desktop: contínuo — não encerra na primeira pausa; o fim é decidido pelo
+  // timer de silêncio ou pelo clique. iOS: o modo contínuo do Safari é
+  // quebrado (resultados não chegam); usa frase única e deixa o PRÓPRIO iOS
+  // detectar o fim da fala.
+  rec.continuous = !IS_IOS;
   rec.interimResults = true;
   return rec;
 }
@@ -45,8 +49,6 @@ const WAKE_STORAGE_KEY = "vedo.wake";
 // reconhecedor costuma transcrever). Aceita comando na mesma frase:
 // "olá vedo, me dá o briefing" já dispara o briefing.
 const HOTWORD = /\b(ol[aá]|oi|al[oô])[\s,.!]*(vedo|vedô|veto|vê\s?do|vedu)\b/i;
-
-const IS_IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 // Erros da Web Speech API viram instruções acionáveis (especialmente no iPhone,
 // onde "service-not-allowed" significa o iOS barrando o serviço de ditado).
@@ -241,11 +243,15 @@ export function useVoiceAssistant() {
     setInterim("");
 
     // (Re)arma o timer: se ficar SILENCE_MS sem nada novo, encerra e processa.
+    // No iOS o Safari muitas vezes NÃO manda resultados parciais — um timer
+    // curto cortaria a fala no meio. Lá o próprio iOS detecta o fim da frase
+    // (continuous=false); o timer vira só uma trava de segurança longa.
+    const silencioMs = IS_IOS ? 12000 : SILENCE_MS;
     const armSilenceTimer = () => {
       clearSilenceTimer();
       silenceTimerRef.current = setTimeout(() => {
         stopListening();
-      }, SILENCE_MS);
+      }, silencioMs);
     };
 
     rec.onresult = (e: any) => {
@@ -284,7 +290,9 @@ export function useVoiceAssistant() {
       // O navegador pode encerrar sozinho por conta de silêncio, mas se o
       // usuário NÃO pediu pra parar e ainda não falou nada, reinicia a escuta
       // em vez de desistir — assim pausas longas antes de começar não cortam.
-      if (!stoppingRef.current && !text && restartsRef.current < 20) {
+      // (No iOS não: reiniciar fora de um toque é bloqueado pelo Safari, e o
+      // encerramento natural é o sinal de que a frase acabou.)
+      if (!stoppingRef.current && !text && !IS_IOS && restartsRef.current < 20) {
         try {
           restartsRef.current += 1;
           rec.start();
