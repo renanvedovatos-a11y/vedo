@@ -46,14 +46,16 @@ const WAKE_STORAGE_KEY = "vedo.wake";
 // "olá vedo, me dá o briefing" já dispara o briefing.
 const HOTWORD = /\b(ol[aá]|oi|al[oô])[\s,.!]*(vedo|vedô|veto|vê\s?do|vedu)\b/i;
 
+const IS_IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
 // Erros da Web Speech API viram instruções acionáveis (especialmente no iPhone,
-// onde "service-not-allowed" significa Ditado desativado no iOS).
+// onde "service-not-allowed" significa o iOS barrando o serviço de ditado).
 function erroAmigavel(code: string): string {
-  const ios = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const ios = IS_IOS;
   switch (code) {
     case "service-not-allowed":
       return ios
-        ? "O iPhone está bloqueando o reconhecimento de voz do navegador. Ative em Ajustes → Geral → Teclado → ATIVAR DITADO (e deixe a Siri ligada em Ajustes → Siri). Depois feche e reabra esta página."
+        ? "O iPhone barrou o serviço de voz. Confira: 1) use o SAFARI (Chrome e outros navegadores no iPhone não têm acesso ao ditado); 2) abra pelo endereço, não por atalho salvo na tela de início; 3) Ajustes → Geral → Teclado → Ativar Ditado ligado; 4) Ajustes → Siri ligada. Depois feche a aba e abra de novo."
         : "O navegador bloqueou o serviço de voz. Confira a permissão de microfone do site e tente de novo.";
     case "not-allowed":
       return "Permissão de microfone negada. Toque no ícone de cadeado/aA na barra de endereço, permita o Microfone e recarregue.";
@@ -220,11 +222,18 @@ export function useVoiceAssistant() {
       );
       return;
     }
-    try {
-      await audioEngine.start();
-    } catch {
-      // Sem permissão de microfone os visualizadores ficam em modo idle,
-      // mas o reconhecimento ainda pode funcionar.
+    // No iOS o microfone NÃO pode ser aberto duas vezes: se o visualizador
+    // (getUserMedia) segurar o mic, o serviço de ditado da Apple falha com
+    // "service-not-allowed" — e cada tentativa repete o pedido de permissão.
+    // No iPhone/iPad o reconhecimento fica com o mic só pra ele; o orb anima
+    // pelo estado (listening/speaking), sem nível de áudio real.
+    if (!IS_IOS) {
+      try {
+        await audioEngine.start();
+      } catch {
+        // Sem permissão de microfone os visualizadores ficam em modo idle,
+        // mas o reconhecimento ainda pode funcionar.
+      }
     }
     finalTextRef.current = "";
     stoppingRef.current = false;
