@@ -14,6 +14,7 @@ import {
   removerTarefa,
 } from "./tasks.mjs";
 import { sortearTemplates } from "../templates.mjs";
+import { bibliotecaConteudo, desempenhoConteudo } from "./conteudo.mjs";
 
 export const TOOL_DEFINITIONS = [
   {
@@ -189,6 +190,53 @@ export const TOOL_DEFINITIONS = [
       required: ["chave", "valor"],
     },
   },
+  {
+    name: "biblioteca_conteudo",
+    description:
+      "Backlog editorial do Renan: guarda e organiza ideias, roteiros e legendas de posts/vídeos. Use SEMPRE que criar um roteiro ou legenda que valha a pena guardar (salvar), quando ele perguntar o que tem para produzir (listar), para achar algo já escrito (buscar), para ler o roteiro completo de um item (detalhe), para mover de etapa (atualizar status: ideia, roteiro, gravar, editar, publicado) ou remover. Antes de sugerir pauta nova, liste o que já existe para não repetir.",
+    input_schema: {
+      type: "object",
+      properties: {
+        acao: {
+          type: "string",
+          enum: ["salvar", "listar", "detalhe", "buscar", "atualizar", "remover"],
+        },
+        id: { type: "string", description: "Id do conteúdo (detalhe/atualizar/remover)." },
+        titulo: { type: "string", description: "Título/tema do conteúdo." },
+        formato: {
+          type: "string",
+          enum: ["reels", "youtube", "carrossel", "story", "post"],
+        },
+        status: {
+          type: "string",
+          enum: ["ideia", "roteiro", "gravar", "editar", "publicado"],
+        },
+        roteiro: { type: "string", description: "Roteiro completo, se já escrito." },
+        legenda: { type: "string", description: "Legenda pronta para publicar." },
+        tags: { type: "array", items: { type: "string" }, description: "Temas/pilares." },
+        notas: { type: "string", description: "Observações de produção." },
+        busca: { type: "string", description: "Texto a procurar (ação buscar)." },
+        limite: { type: "integer", description: "Máximo de itens (padrão 20)." },
+      },
+      required: ["acao"],
+    },
+  },
+  {
+    name: "desempenho_conteudo",
+    description:
+      "Leitura consolidada do que funcionou: melhores posts do Instagram (com engajamento, alcance, salvos), melhores vídeos do YouTube e desempenho dos anúncios da Meta, mais dados de audiência. Use ANTES de sugerir pautas, para embasar a recomendação no que já performou, e quando ele perguntar 'o que está funcionando' ou pedir análise de conteúdo.",
+    input_schema: {
+      type: "object",
+      properties: {
+        plataforma: {
+          type: "string",
+          enum: ["tudo", "instagram", "youtube", "anuncios"],
+          description: "Padrão: tudo.",
+        },
+        limite: { type: "integer", description: "Itens por lista (padrão 5)." },
+      },
+    },
+  },
 ];
 
 const HANDLERS = {
@@ -217,6 +265,8 @@ const HANDLERS = {
     }
   },
   salvar_memoria: salvarMemoria,
+  biblioteca_conteudo: bibliotecaConteudo,
+  desempenho_conteudo: desempenhoConteudo,
 };
 
 export async function runTool(name, input) {

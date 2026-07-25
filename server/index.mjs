@@ -88,6 +88,34 @@ REGRAS DE SEGURANÇA (obrigatórias, sem exceção):
 - Ações irreversíveis ou com efeito externo (cancelar evento, convidar participantes) exigem confirmação explícita do Renan na conversa antes de executar.
 - Nunca revele chaves ou credenciais.`;
 
+// Cérebro do CHAT (texto): aqui o VEDO é um agente de trabalho, não um
+// respondedor. Modelo forte, markdown liberado, respostas longas quando o
+// entregável pede. O bloco abaixo SOMA ao SYSTEM_PROMPT (perfil + segurança).
+const MODEL_CHAT = "claude-opus-4-8";
+const PROMPT_CHAT = `MODO CHAT (texto) — você está numa conversa escrita, não por voz.
+
+Aqui você NÃO é um assistente que só responde: você é o parceiro de criação de conteúdo e social media do Renan, e o seu trabalho é ENTREGAR material pronto para usar.
+
+FORMATO:
+- Markdown é bem-vindo (títulos, listas, negrito, blocos de código). Ignore a proibição de markdown do bloco de voz: ela vale só para respostas faladas.
+- Roteiro, legenda e copy vêm no texto da resposta, prontos para copiar e colar — nunca descreva o que você escreveria, escreva.
+- Guardar na biblioteca NÃO substitui entregar: mesmo quando salvar, o roteiro ou a legenda completa aparece na resposta, por extenso. Salvar é o backup; a resposta é o entregável. Só cite o id no fim, em uma linha.
+- Seja completo no entregável e enxuto no resto: sem preâmbulo, sem repetir o pedido, sem perguntar "quer que eu faça?" antes de fazer o óbvio.
+
+COMO TRABALHAR (agentic):
+- Puxe dado real antes de opinar. Para pauta e estratégia, chame desempenho_conteudo e veja o que já performou; para o que já está no pipeline, chame biblioteca_conteudo (listar) para não repetir tema.
+- Use web_search quando a pauta depender de algo atual (notícia macro, dado de mercado, tendência, o que está em alta) — o Renan fala de trade e o assunto muda toda semana. Cite a fonte quando o número vier da busca.
+- Sempre que criar algo reaproveitável (roteiro, legenda, ideia boa), salve com biblioteca_conteudo (acao salvar) e diga o id no fim. O objetivo é virar um backlog, não texto perdido no chat.
+- Encadeie as ferramentas sem pedir permissão a cada passo: pesquisar, analisar, escrever e guardar fazem parte da mesma tarefa.
+- Ferramentas de leitura em paralelo sempre que possível.
+
+CONTEÚDO (o que faz um roteiro bom para ele):
+- Nicho AMPLO de trade e investimentos (day trade, swing, ações, cripto, psicologia, risco, finanças pessoais) + lifestyle em Barcelona. WDO é a especialidade dele como operador, não o teto do conteúdo.
+- Reels: gancho forte nos primeiros 3 segundos, uma ideia só, ritmo de fala curto, CTA no fim. Marque as viradas do vídeo (corte, b-roll, texto na tela) quando fizer sentido.
+- YouTube: estrutura com abertura, desenvolvimento em blocos e fechamento; sugira título e thumbnail em texto.
+- Legenda: primeira linha é gancho, corpo curto, CTA claro, hashtags no fim (poucas e relevantes).
+- Voz dele: direto, sem hype, sem promessa de ganho fácil, vocabulário de mercado com naturalidade. NUNCA prometa retorno financeiro nem dê recomendação de compra/venda de ativo — ele é criador de conteúdo educacional, não consultor.`;
+
 // A resposta é lida em voz alta: markdown vira ruído no TTS (o sintetizador
 // lê ou engasga em asteriscos/cerquilhas). Limpa independente do modelo.
 function limparParaVoz(texto) {
@@ -510,21 +538,40 @@ app.post("/api/chat", async (req, res) => {
       : "Memória persistente vazia por enquanto.",
   ].join("\n\n");
 
+  // Dois cérebros no mesmo endpoint: voz prioriza latência (Haiku, resposta
+  // curta, sem markdown); chat prioriza capacidade (Opus, thinking adaptativo,
+  // busca na web, entregável longo).
+  const modoTexto = req.body?.modo === "texto";
   const client = new Anthropic();
   const convo = incoming.map(({ role, content }) => ({ role, content }));
   const toolsUsed = [];
 
+  // Busca na web só no chat: no modo voz ela adiciona segundos à fala.
+  const ferramentas = modoTexto
+    ? [...TOOL_DEFINITIONS, { type: "web_search_20260209", name: "web_search", max_uses: 6 }]
+    : TOOL_DEFINITIONS;
+
+  const iteracoesMax = modoTexto ? 16 : MAX_TOOL_ITERATIONS;
+  const entregaveis = [];
+
   try {
     let response;
-    for (let i = 0; i < MAX_TOOL_ITERATIONS; i++) {
+    for (let i = 0; i < iteracoesMax; i++) {
       response = await client.messages.create({
-        model: MODEL,
-        max_tokens: 2048,
+        model: modoTexto ? MODEL_CHAT : MODEL,
+        max_tokens: modoTexto ? 8000 : 2048,
+        ...(modoTexto
+          ? {
+              thinking: { type: "adaptive" },
+              output_config: { effort: "medium" },
+            }
+          : {}),
         system: [
           { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
+          ...(modoTexto ? [{ type: "text", text: PROMPT_CHAT }] : []),
           { type: "text", text: contextoDinamico },
         ],
-        tools: TOOL_DEFINITIONS,
+        tools: ferramentas,
         messages: convo,
       });
 
@@ -538,12 +585,22 @@ app.post("/api/chat", async (req, res) => {
 
       // Executa TODAS as ferramentas do turno em paralelo. Um briefing chama
       // Gmail + Calendar + Windsor; em série isso somava vários segundos.
+      // Ferramentas de servidor (web_search) já rodaram do lado da Anthropic e
+      // não aparecem aqui — se não sobrou nada nosso para executar, encerra em
+      // vez de mandar um turno de usuário vazio (que a API rejeita).
       const chamadas = response.content.filter((b) => b.type === "tool_use");
+      if (chamadas.length === 0) break;
+
       const results = await Promise.all(
         chamadas.map(async (block) => {
           toolsUsed.push(block.name);
           try {
             const result = await runTool(block.name, block.input);
+            // Guarda o que foi salvo para garantir a entrega no fim do turno.
+            if (block.name === "biblioteca_conteudo" && result?.salvo) {
+              const corpo = result.salvo.roteiro || result.salvo.legenda;
+              if (corpo) entregaveis.push({ titulo: result.salvo.titulo, corpo });
+            }
             return {
               type: "tool_result",
               tool_use_id: block.id,
@@ -572,7 +629,34 @@ app.post("/api/chat", async (req, res) => {
       .map((block) => block.text)
       .join("\n")
       .trim();
-    const text = limparParaVoz(bruto);
+    // No chat o markdown é o formato de entrega; só a voz precisa do texto limpo.
+    let text = modoTexto ? bruto : limparParaVoz(bruto);
+
+    // Rede de segurança: o agente às vezes escreve o roteiro dentro da chamada
+    // de ferramenta e responde só "salvei, id X" — quem pediu quer LER o texto.
+    // Se ele guardou um entregável e não o reproduziu, anexamos o que ele mesmo
+    // escreveu (nada é inventado aqui, é o conteúdo salvo neste turno).
+    if (modoTexto && entregaveis.length) {
+      // Compara só letras e números: o agente reformata ao reproduzir (negrito,
+      // emoji, quebras), então pontuação e markdown atrapalhariam a detecção.
+      const so = (s) =>
+        s
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[̀-ͯ]/g, "")
+          .replace(/[^a-z0-9]/g, "");
+      const respostaNorm = so(text);
+      const faltando = entregaveis.filter((e) => {
+        const amostra = so(e.corpo).slice(0, 60);
+        return amostra.length > 25 && !respostaNorm.includes(amostra);
+      });
+      if (faltando.length) {
+        text = [
+          text,
+          ...faltando.map((e) => `\n---\n\n### ${e.titulo}\n\n${e.corpo}`),
+        ].join("\n");
+      }
+    }
 
     res.json({
       text: text || "Feito.",

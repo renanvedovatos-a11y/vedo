@@ -169,7 +169,7 @@ export function useVoiceAssistant() {
   }, []);
 
   const process = useCallback(
-    async (text: string) => {
+    async (text: string, modo: "voz" | "texto" = "voz") => {
       const clean = text.trim();
       if (!clean) {
         setStatus("idle");
@@ -184,6 +184,7 @@ export function useVoiceAssistant() {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
+            modo,
             messages: history.map(({ role, content }) => ({ role, content })),
           }),
         });
@@ -194,7 +195,10 @@ export function useVoiceAssistant() {
           ...history,
           { role: "assistant", content: reply, tools: data.tools_used ?? [] },
         ]);
-        speak(reply);
+        // Resposta do chat é para LER (markdown, roteiro longo) — falar isso em
+        // voz alta seria ruído. Só o modo voz dispara o TTS.
+        if (modo === "voz") speak(reply);
+        else setStatus("idle");
       } catch (err) {
         const message = err instanceof Error ? err.message : String(err);
         setError(message);
@@ -532,7 +536,7 @@ export function useVoiceAssistant() {
       if (status === "processing") return;
       if (status === "speaking") window.speechSynthesis?.cancel();
       if (status === "listening") recRef.current?.abort();
-      void process(text);
+      void process(text, "texto");
     },
     [status, process],
   );
