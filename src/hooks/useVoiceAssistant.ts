@@ -93,6 +93,9 @@ export function useVoiceAssistant() {
   const [status, setStatus] = useState<AssistantStatus>("idle");
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [interim, setInterim] = useState("");
+  // Resposta do chat sendo escrita agora + ferramenta em execução no momento.
+  const [parcial, setParcial] = useState("");
+  const [ferramenta, setFerramenta] = useState<string | null>(null);
   const [confidence, setConfidence] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [speechSupported] = useState(() => createRecognition() !== null);
@@ -179,6 +182,79 @@ export function useVoiceAssistant() {
       setStatus("processing");
       const history = [...messagesRef.current, { role: "user" as const, content: clean }];
       setMessages(history);
+
+      // Chat: consome o turno em streaming, então o texto aparece enquanto é
+      // escrito (e as ferramentas aparecem conforme rodam).
+      if (modo === "texto") {
+        setParcial("");
+        setFerramenta(null);
+        try {
+          const res = await fetch("/api/chat/stream", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              messages: history.map(({ role, content }) => ({ role, content })),
+            }),
+          });
+          if (!res.ok || !res.body) throw new Error(`Erro ${res.status}`);
+
+          const reader = res.body.getReader();
+          const decoder = new TextDecoder();
+          let buffer = "";
+          let acumulado = "";
+          let usadas: string[] = [];
+          let erroStream: string | null = null;
+
+          for (;;) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            buffer += decoder.decode(value, { stream: true });
+            // Eventos SSE são separados por linha em branco.
+            const partes = buffer.split("\n\n");
+            buffer = partes.pop() ?? "";
+            for (const parte of partes) {
+              const linha = parte.split("\n").find((l) => l.startsWith("data: "));
+              if (!linha) continue;
+              let ev: any;
+              try {
+                ev = JSON.parse(linha.slice(6));
+              } catch {
+                continue;
+              }
+              if (ev.tipo === "texto") {
+                acumulado += ev.delta;
+                setParcial(acumulado);
+                setFerramenta(null);
+              } else if (ev.tipo === "ferramenta") {
+                setFerramenta(ev.nome);
+              } else if (ev.tipo === "fim") {
+                acumulado = ev.texto ?? acumulado;
+                usadas = ev.tools_used ?? [];
+              } else if (ev.tipo === "erro") {
+                erroStream = ev.erro;
+              }
+            }
+          }
+
+          setParcial("");
+          setFerramenta(null);
+          if (erroStream) throw new Error(erroStream);
+          setMessages([
+            ...history,
+            { role: "assistant", content: acumulado || "Feito.", tools: usadas },
+          ]);
+        } catch (err) {
+          const message = err instanceof Error ? err.message : String(err);
+          setParcial("");
+          setFerramenta(null);
+          setError(message);
+          setMessages([...history, { role: "assistant", content: `[erro] ${message}` }]);
+        } finally {
+          setStatus("idle");
+        }
+        return;
+      }
+
       try {
         const res = await fetch("/api/chat", {
           method: "POST",
@@ -563,5 +639,7 @@ export function useVoiceAssistant() {
     testVoice,
     wakeAtivo,
     setWakeAtivo,
+    parcial,
+    ferramenta,
   };
 }

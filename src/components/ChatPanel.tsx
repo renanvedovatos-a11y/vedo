@@ -30,15 +30,41 @@ interface Props {
   interim: string;
   error: string | null;
   onSend: (text: string) => void;
+  parcial?: string;
+  ferramenta?: string | null;
 }
 
-export function ChatPanel({ messages, interim, error, onSend }: Props) {
+// Nome técnico da ferramenta -> o que ele está fazendo, em português.
+const FAZENDO: Record<string, string> = {
+  web_search: "pesquisando na web",
+  desempenho_conteudo: "analisando o que performou",
+  biblioteca_conteudo: "consultando a biblioteca",
+  buscar_templates_video: "buscando templates",
+  metricas_sociais: "puxando métricas",
+  listar_emails: "lendo e-mails",
+  criar_rascunho_email: "escrevendo rascunho",
+  listar_eventos: "vendo a agenda",
+  horarios_livres: "procurando horário livre",
+  criar_evento: "criando evento",
+  cancelar_evento: "cancelando evento",
+  gerenciar_tarefas: "mexendo nas tarefas",
+  salvar_memoria: "guardando na memória",
+};
+
+export function ChatPanel({
+  messages,
+  interim,
+  error,
+  onSend,
+  parcial = "",
+  ferramenta = null,
+}: Props) {
   const [input, setInput] = useState("");
   const logRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages, interim]);
+  }, [messages, interim, parcial, ferramenta]);
 
   const submit = () => {
     const text = input.trim();
@@ -93,6 +119,20 @@ export function ChatPanel({ messages, interim, error, onSend }: Props) {
             )}
           </div>
         ))}
+        {/* Resposta chegando em tempo real */}
+        {parcial && (
+          <div className="msg assistant">
+            <Markdown texto={parcial} />
+            <span className="cursor-escrevendo" />
+          </div>
+        )}
+        {/* Enquanto ele trabalha (sem texto ainda), mostra o que está fazendo */}
+        {ferramenta && (
+          <div className="msg trabalhando">
+            <span className="pontinhos"><i /><i /><i /></span>
+            {FAZENDO[ferramenta] ?? ferramenta}…
+          </div>
+        )}
         {interim && <div className="msg interim">{interim}…</div>}
       </div>
       {error && <div className="error-bar">{error}</div>}

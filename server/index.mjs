@@ -99,7 +99,9 @@ Aqui você NÃO é um assistente que só responde: você é o parceiro de criaç
 FORMATO:
 - Markdown é bem-vindo (títulos, listas, negrito, blocos de código). Ignore a proibição de markdown do bloco de voz: ela vale só para respostas faladas.
 - Roteiro, legenda e copy vêm no texto da resposta, prontos para copiar e colar — nunca descreva o que você escreveria, escreva.
-- Guardar na biblioteca NÃO substitui entregar: mesmo quando salvar, o roteiro ou a legenda completa aparece na resposta, por extenso. Salvar é o backup; a resposta é o entregável. Só cite o id no fim, em uma linha.
+- REGRA DURA: o Renan NÃO consegue ver a biblioteca a partir do chat. Uma resposta que só diz "salvei, ids X, Y, Z" não entregou nada — é um erro. Tema, roteiro, legenda: escreva o conteúdo por extenso na resposta, sempre.
+- Ordem correta: escreva o conteúdo na resposta PRIMEIRO, salve depois. Salvar é backup; a resposta é o entregável. O id vai no fim, em uma linha discreta.
+- Pediu "3 temas"? Vêm os 3 temas escritos (título + o ângulo/gancho de cada um), não três ids.
 - Seja completo no entregável e enxuto no resto: sem preâmbulo, sem repetir o pedido, sem perguntar "quer que eu faça?" antes de fazer o óbvio.
 
 COMO TRABALHAR (agentic):
@@ -115,6 +117,63 @@ CONTEÚDO (o que faz um roteiro bom para ele):
 - YouTube: estrutura com abertura, desenvolvimento em blocos e fechamento; sugira título e thumbnail em texto.
 - Legenda: primeira linha é gancho, corpo curto, CTA claro, hashtags no fim (poucas e relevantes).
 - Voz dele: direto, sem hype, sem promessa de ganho fácil, vocabulário de mercado com naturalidade. NUNCA prometa retorno financeiro nem dê recomendação de compra/venda de ativo — ele é criador de conteúdo educacional, não consultor.`;
+
+// Relógio + memória persistente: muda a cada requisição, então fica FORA do
+// bloco cacheado do system prompt.
+function montarContextoDinamico() {
+  const memoria = lerMemoria();
+  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const agora = new Date().toLocaleString("pt-BR", {
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const d = new Date();
+  const hojeIso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  return [
+    `Data e hora atual (fuso do sistema, ${tz}): ${agora}. Hoje em formato ISO: ${hojeIso}. Use este relógio como referência para "hoje", "amanhã", horários e datas de tarefas/eventos.`,
+    Object.keys(memoria).length
+      ? `MEMÓRIA PERSISTENTE (fatos salvos em conversas anteriores):\n${Object.entries(
+          memoria,
+        )
+          .map(([k, v]) => `- ${k}: ${v.valor}`)
+          .join("\n")}`
+      : "Memória persistente vazia por enquanto.",
+  ].join("\n\n");
+}
+
+// Rede de segurança: o agente às vezes escreve o conteúdo dentro da chamada de
+// ferramenta e responde só "salvei, id X" — mas quem pediu quer LER. Devolve o
+// trecho a anexar (vazio se ele já entregou). Nada é inventado: é o que ele
+// mesmo salvou neste turno.
+function entregaveisFaltando(texto, entregaveis) {
+  if (!entregaveis.length) return "";
+  // Compara só letras e números: ao reproduzir, o agente reformata com
+  // **negrito**, emoji e quebras — pontuação atrapalharia a detecção.
+  const so = (s) =>
+    s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]/g, "");
+  const norm = so(texto);
+  // Um roteiro/legenda é longo: dá para procurar o corpo dele na resposta. Um
+  // tema é uma anotação curta que o agente reescreve com outras palavras ao
+  // apresentar — aí o sinal confiável de que ele entregou é o TÍTULO aparecer.
+  const LONGO = 300;
+  const faltando = entregaveis.filter((e) => {
+    const alvo = e.corpo && e.corpo.length >= LONGO ? e.corpo : e.titulo;
+    const amostra = so(alvo).slice(0, 60);
+    return amostra.length > 8 && !norm.includes(amostra);
+  });
+  if (!faltando.length) return "";
+  return faltando
+    .map((e) =>
+      e.corpo && e.corpo.length >= LONGO
+        ? `\n\n---\n\n### ${e.titulo}\n\n${e.corpo}`
+        : `\n- **${e.titulo}**${e.corpo ? ` — ${e.corpo}` : ""}`,
+    )
+    .join("");
+}
 
 // A resposta é lida em voz alta: markdown vira ruído no TTS (o sintetizador
 // lê ou engasga em asteriscos/cerquilhas). Limpa independente do modelo.
@@ -523,30 +582,7 @@ app.post("/api/chat", async (req, res) => {
     return;
   }
 
-  const memoria = lerMemoria();
-  const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const agora = new Date().toLocaleString("pt-BR", {
-    weekday: "long",
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  const hojeIso = (() => {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-  })();
-  const contextoDinamico = [
-    `Data e hora atual (fuso do sistema, ${tz}): ${agora}. Hoje em formato ISO: ${hojeIso}. Use este relógio como referência para "hoje", "amanhã", horários e datas de tarefas/eventos.`,
-    Object.keys(memoria).length
-      ? `MEMÓRIA PERSISTENTE (fatos salvos em conversas anteriores):\n${Object.entries(
-          memoria,
-        )
-          .map(([k, v]) => `- ${k}: ${v.valor}`)
-          .join("\n")}`
-      : "Memória persistente vazia por enquanto.",
-  ].join("\n\n");
+  const contextoDinamico = montarContextoDinamico();
 
   // Dois cérebros no mesmo endpoint: voz prioriza latência (Haiku, resposta
   // curta, sem markdown); chat prioriza capacidade (Opus, thinking adaptativo,
@@ -608,8 +644,12 @@ app.post("/api/chat", async (req, res) => {
             const result = await runTool(block.name, block.input);
             // Guarda o que foi salvo para garantir a entrega no fim do turno.
             if (block.name === "biblioteca_conteudo" && result?.salvo) {
-              const corpo = result.salvo.roteiro || result.salvo.legenda;
-              if (corpo) entregaveis.push({ titulo: result.salvo.titulo, corpo });
+              const s = result.salvo;
+              entregaveis.push({
+                titulo: s.titulo,
+                // Uma ideia/tema não tem roteiro — o conteúdo dela são as notas.
+                corpo: s.roteiro || s.legenda || s.notas || "",
+              });
             }
             return {
               type: "tool_result",
@@ -646,27 +686,7 @@ app.post("/api/chat", async (req, res) => {
     // de ferramenta e responde só "salvei, id X" — quem pediu quer LER o texto.
     // Se ele guardou um entregável e não o reproduziu, anexamos o que ele mesmo
     // escreveu (nada é inventado aqui, é o conteúdo salvo neste turno).
-    if (modoTexto && entregaveis.length) {
-      // Compara só letras e números: o agente reformata ao reproduzir (negrito,
-      // emoji, quebras), então pontuação e markdown atrapalhariam a detecção.
-      const so = (s) =>
-        s
-          .toLowerCase()
-          .normalize("NFD")
-          .replace(/[̀-ͯ]/g, "")
-          .replace(/[^a-z0-9]/g, "");
-      const respostaNorm = so(text);
-      const faltando = entregaveis.filter((e) => {
-        const amostra = so(e.corpo).slice(0, 60);
-        return amostra.length > 25 && !respostaNorm.includes(amostra);
-      });
-      if (faltando.length) {
-        text = [
-          text,
-          ...faltando.map((e) => `\n---\n\n### ${e.titulo}\n\n${e.corpo}`),
-        ].join("\n");
-      }
-    }
+    if (modoTexto) text += entregaveisFaltando(text, entregaveis);
 
     res.json({
       text: text || "Feito.",
@@ -678,6 +698,122 @@ app.post("/api/chat", async (req, res) => {
     const status = err?.status ?? 500;
     res.status(status >= 400 && status < 600 ? status : 500).json({ error: message });
   }
+});
+
+// ---------- chat em streaming (SSE) ----------
+// Um chat só parece vivo se o texto aparece enquanto está sendo escrito. Aqui o
+// turno inteiro — inclusive as idas e vindas de ferramenta — vira um fluxo de
+// eventos, então o Renan vê a resposta nascendo e o que o agente está fazendo,
+// em vez de encarar uma tela parada por meio minuto.
+app.post("/api/chat/stream", async (req, res) => {
+  const incoming = req.body?.messages;
+  if (!Array.isArray(incoming) || incoming.length === 0) {
+    res.status(400).json({ error: "Corpo inválido: esperado { messages: [...] }" });
+    return;
+  }
+
+  res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
+  res.setHeader("Cache-Control", "no-cache, no-transform");
+  res.setHeader("Connection", "keep-alive");
+  res.setHeader("X-Accel-Buffering", "no"); // proxies não podem bufferizar SSE
+  res.flushHeaders?.();
+  const enviar = (evento) => res.write(`data: ${JSON.stringify(evento)}\n\n`);
+
+  const client = new Anthropic();
+  const convo = incoming.map(({ role, content }) => ({ role, content }));
+  const contextoDinamico = montarContextoDinamico();
+  const toolsUsed = [];
+  const entregaveis = [];
+  let textoFinal = "";
+  let abortado = false;
+  res.on("close", () => {
+    abortado = true;
+  });
+
+  try {
+    for (let i = 0; i < 16 && !abortado; i++) {
+      const stream = client.messages.stream({
+        model: MODEL_CHAT,
+        max_tokens: 8000,
+        thinking: { type: "adaptive" },
+        output_config: { effort: "medium" },
+        system: [
+          { type: "text", text: SYSTEM_PROMPT, cache_control: { type: "ephemeral" } },
+          { type: "text", text: PROMPT_CHAT },
+          { type: "text", text: contextoDinamico },
+        ],
+        tools: [
+          ...TOOL_DEFINITIONS,
+          { type: "web_search_20260209", name: "web_search", max_uses: 6 },
+        ],
+        messages: convo,
+      });
+
+      stream.on("text", (delta) => {
+        textoFinal += delta;
+        enviar({ tipo: "texto", delta });
+      });
+
+      const response = await stream.finalMessage();
+
+      if (response.stop_reason === "refusal") {
+        enviar({ tipo: "texto", delta: "\n\nNão consegui responder a isso. Pode reformular?" });
+        break;
+      }
+      if (response.stop_reason === "pause_turn") {
+        convo.push({ role: "assistant", content: response.content });
+        continue;
+      }
+      if (response.stop_reason !== "tool_use") break;
+
+      convo.push({ role: "assistant", content: response.content });
+      const chamadas = response.content.filter((b) => b.type === "tool_use");
+      if (chamadas.length === 0) break;
+
+      // Mostra o que ele está fazendo — é o que dá a sensação de trabalho em
+      // andamento em vez de travamento.
+      for (const c of chamadas) enviar({ tipo: "ferramenta", nome: c.name });
+
+      const results = await Promise.all(
+        chamadas.map(async (block) => {
+          toolsUsed.push(block.name);
+          try {
+            const result = await runTool(block.name, block.input);
+            if (block.name === "biblioteca_conteudo" && result?.salvo) {
+              const s = result.salvo;
+              entregaveis.push({
+                titulo: s.titulo,
+                corpo: s.roteiro || s.legenda || s.notas || "",
+              });
+            }
+            return {
+              type: "tool_result",
+              tool_use_id: block.id,
+              content: JSON.stringify(result),
+            };
+          } catch (err) {
+            return {
+              type: "tool_result",
+              tool_use_id: block.id,
+              content: String(err?.message ?? err),
+              is_error: true,
+            };
+          }
+        }),
+      );
+      convo.push({ role: "user", content: results });
+    }
+
+    const anexo = entregaveisFaltando(textoFinal, entregaveis);
+    if (anexo) {
+      textoFinal += anexo;
+      enviar({ tipo: "texto", delta: anexo });
+    }
+    enviar({ tipo: "fim", texto: textoFinal, tools_used: toolsUsed });
+  } catch (err) {
+    enviar({ tipo: "erro", erro: err?.message ?? String(err) });
+  }
+  res.end();
 });
 
 // ---------- painel (produção): serve o build do Vite ----------

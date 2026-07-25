@@ -149,6 +149,8 @@ function Painel() {
     testVoice,
     wakeAtivo,
     setWakeAtivo,
+    parcial,
+    ferramenta,
   } = useVoiceAssistant();
 
   const social = useSocial();
@@ -183,7 +185,14 @@ function Painel() {
           />
           <div className="bottom">
             <EmailsCell onOpen={() => setDetail("emails")} />
-            <ChatPanel messages={messages} interim={interim} error={error} onSend={sendText} />
+            <ChatPanel
+              messages={messages}
+              interim={interim}
+              error={error}
+              onSend={sendText}
+              parcial={parcial}
+              ferramenta={ferramenta}
+            />
             <AgendaCell onOpen={() => setDetail("agenda")} onOpenDia={setDia} />
             <TasksTodayCell onOpen={() => setDetail("tarefas")} />
           </div>
