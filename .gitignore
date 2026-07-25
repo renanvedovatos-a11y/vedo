@@ -1,4 +1,7 @@
 node_modules
 dist
 .env
-data/
+# Só a pasta data/ da RAIZ (tokens do Google, regras do IG, tarefas).
+# Sem a barra inicial, o padrão casava também com src/data/, o que deixou a
+# biblioteca de 205 templates de fora do repositório — e portanto fora do ar.
+/data/

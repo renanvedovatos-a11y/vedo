@@ -1,0 +1,2877 @@
+[
+ {
+  "id": 1,
+  "ganchos": [
+   "Você não vai acreditar no antes e depois disso…",
+   "Olha só o que acontece quando você faz [ação simples].",
+   "Assiste até o final pra ver o resultado!"
+  ],
+  "cenas": [
+   "Mostre o problema inicial Grave um take mostrando o objeto, situação ou processo inicial: \"Tá vendo isso aqui? Ele/isso estava ___ (descreva o problema).\"",
+   "Mostre o que você fez \"Então eu tentei fazer ___ (explique a ação que você vai mostrar).\" Mostre suas mãos fazendo algo, ou use cortes rápidos",
+   "Revele o resultado final Corte para o resultado já transformado e diga: \"Olha só como ficou depois de ___!\""
+  ],
+  "conclusao": "“Você já tinha visto isso? Marca alguém pra ver isso também.”"
+ },
+ {
+  "id": 2,
+  "ganchos": [
+   "Você ainda acredita nisso? Então precisa assistir até o final.",
+   "O que ninguém te contou sobre [tema do nicho].",
+   "Eu apostaria que você faz isso errado todos os dias!"
+  ],
+  "cenas": [
+   "Apresente a crença comum Diga de forma simples e direta: \"Muita gente acredita que ___ (insira aqui algo que seu público costuma fazer errado).\"",
+   "Crie a tensão Continue: \"Mas olha só o problema disso: quando você faz isso, você acaba ___ (explique a consequência ruim).\"",
+   "Revele a verdade Mostre a solução ou explique de forma simples: \"O que realmente funciona é ___ (sua dica ou método).\" Mostre rapidamente como aplicar (demonstração ou exemplo)"
+  ],
+  "conclusao": "“Agora me conta: você também fazia isso? Comenta aqui embaixo!”"
+ },
+ {
+  "id": 3,
+  "ganchos": [
+   "Será que isso realmente funciona?",
+   "Vi isso na internet e tive que testar…",
+   "O truque mais maluco que já vi para [tema do nicho]."
+  ],
+  "cenas": [
+   "Mostre o hack \"Dizem que se você fizer ___ (insira o truque), acontece ___ (benefício ou resultado prometido).\" Mostre o objeto ou situação antes do teste",
+   "Faça o teste ao vivo Grave você aplicando o truque: \"Tá, vamos lá, eu tô fazendo isso agora…\" Faça comentários espontâneos enquanto executa",
+   "Mostre a reação final Corte direto para o resultado e sua reação real: \"Gente… funcionou! (ou) Não funcionou, olha isso!\""
+  ],
+  "conclusao": "“E aí, você tentaria isso? Deixa nos comentários!”"
+ },
+ {
+  "id": 4,
+  "ganchos": [
+   "Pare de fazer isso agora mesmo!",
+   "3 erros que estão te impedindo de [benefício do nicho].",
+   "Se você faz isso, está jogando tempo/dinheiro fora."
+  ],
+  "cenas": [
+   "Introdução rápida \"Eu vejo muita gente cometendo esses erros e depois reclamando que não consegue ___ (benefício).\"",
+   "Apresente o erro 1 \"Erro número 1: ___ (explique em até 5 segundos e dê um exemplo prático).\"",
+   "Erro 2 \"Erro número 2: ___ (explique e mostre um detalhe visual).\"",
+   "Erro 3 \"Erro número 3: ___ (explique e mostre o impacto negativo).\""
+  ],
+  "conclusao": "“Corrige esses e me conta depois se funcionou!”"
+ },
+ {
+  "id": 5,
+  "ganchos": [
+   "Pare de fazer isso agora mesmo!",
+   "3 erros que estão te impedindo de [benefício do nicho].",
+   "Se você faz isso, está jogando tempo/dinheiro fora."
+  ],
+  "cenas": [
+   "Introdução rápida \"Eu vejo muita gente cometendo esses erros e depois reclamando que não consegue ___ (benefício).\"",
+   "Apresente o erro 1 \"Erro número 1: ___ (explique em até 5 segundos e dê um exemplo prático).\"",
+   "Erro 2 \"Erro número 2: ___ (explique e mostre um detalhe visual).\"",
+   "Erro 3 \"Erro número 3: ___ (explique e mostre o impacto negativo).\""
+  ],
+  "conclusao": "“Corrige esses e me conta depois se funcionou!”"
+ },
+ {
+  "id": 6,
+  "ganchos": [
+   "Ninguém fala sobre isso…",
+   "O segredo que [profissionais do nicho] não querem que você saiba.",
+   "Se eu soubesse disso antes, teria economizado anos!"
+  ],
+  "cenas": [
+   "Explique o contexto \"Todo mundo faz ___ achando que é o certo.\"",
+   "Crie curiosidade \"Só que isso na verdade te atrapalha porque ___ (explique o efeito negativo).\"",
+   "Revele o segredo \"O que realmente faz diferença é ___ (explique a técnica ou truque com exemplo rápido).\""
+  ],
+  "conclusao": "“Se isso fez sentido, escreve aqui: ‘vou testar’.”"
+ },
+ {
+  "id": 7,
+  "ganchos": [
+   "Eu te desafio a tentar isso em casa…",
+   "Consegue fazer isso mais rápido que eu?",
+   "Topa esse desafio?"
+  ],
+  "cenas": [
+   "Explique o desafio \"O desafio é o seguinte: você tem 30 segundos para ___ (ação ligada ao seu nicho).\"",
+   "Mostre você tentando \"Valendo! Eu tô tentando aqui agora…\" (grave você executando)",
+   "Mostre o resultado ou erro engraçado \"Olha só como ficou… quase deu certo! (ou) Consegui em X segundos!\""
+  ],
+  "conclusao": "“Agora quero ver você tentando. Marca aqui!”"
+ },
+ {
+  "id": 8,
+  "ganchos": [
+   "Você não vai acreditar no que aconteceu comigo hoje…",
+   "Olha o que esse cliente fez…",
+   "Isso mudou completamente minha forma de ver [tema]."
+  ],
+  "cenas": [
+   "Introduza o cenário \"Eu tava [situação do seu nicho] quando aconteceu uma coisa bizarra…\"",
+   "Crie tensão \"De repente ___ (conte o que surpreendeu, o problema ou o imprevisto).\"",
+   "Revele a solução ou aprendizado \"E foi aí que eu percebi que ___ (lição prática aplicável ao nicho).\""
+  ],
+  "conclusao": "“E você? Já passou por algo assim? Me conta aqui.”"
+ },
+ {
+  "id": 9,
+  "ganchos": [
+   "Qual você escolheria?",
+   "A diferença entre isso e aquilo vai te surpreender.",
+   "Você está usando o errado!"
+  ],
+  "cenas": [
+   "Apresente as duas opções \"De um lado temos ___ (opção 1), do outro ___ (opção 2).\"",
+   "Mostre as diferenças Mostre lado a lado enquanto explica: \"Essa faz ___, mas essa faz ___.\" Use gestos ou objetos reais",
+   "Revele sua escolha \"Eu escolheria ___ porque ___.\""
+  ],
+  "conclusao": "“E você, qual prefere? Escreve aí.”"
+ },
+ {
+  "id": 10,
+  "ganchos": [
+   "Eu preciso reagir a isso!",
+   "Gente, vocês já viram isso?!",
+   "Olha o absurdo que eu encontrei…"
+  ],
+  "cenas": [
+   "Mostre o conteúdo original Pode ser um vídeo de fundo, imagem ou até descrevendo: \"Acabei de ver isso aqui…\"",
+   "Reaja com emoção \"Não é possível! Eles realmente fizeram ___.\"",
+   "Conecte ao seu nicho \"Se fosse no meu caso, eu teria feito ___ (mostre sua visão técnica ou criativa).\""
+  ],
+  "conclusao": "“Você faria igual ou diferente? Me conta!”"
+ },
+ {
+  "id": 11,
+  "ganchos": [
+   "Isso vai te economizar horas!",
+   "Um truque que poucos usam…",
+   "Se eu soubesse disso antes, teria evitado muitos erros."
+  ],
+  "cenas": [
+   "Explique o problema comum \"Você já passou por isso? [descreva um problema real do nicho].\"",
+   "Mostre a solução \"Descobri que se fizer ___ (explique a dica com clareza).\"",
+   "Demonstre rapidamente Mostre na prática: movimentos com a mão, tela, produto"
+  ],
+  "conclusao": "“Testa e me conta depois se funcionou!”"
+ },
+ {
+  "id": 12,
+  "ganchos": [
+   "Eu preciso te contar o maior erro que eu já cometi em [nicho].",
+   "Aprenda com o meu erro antes que seja tarde…",
+   "Isso aqui me custou caro e pode te custar também."
+  ],
+  "cenas": [
+   "Contextualize rapidamente \"Quando comecei a [atividade do nicho], eu fiz isso: ___.\"",
+   "Crie tensão emocional \"E por causa disso, eu perdi ___ / estraguei ___ / tive que gastar ___.\"",
+   "Explique a lição \"O que eu aprendi é que você precisa fazer ___ (dica prática).\""
+  ],
+  "conclusao": "“Já passou por algo assim? Conta aqui.”"
+ },
+ {
+  "id": 13,
+  "ganchos": [
+   "Se você faz [atividade do nicho], precisa ouvir isso.",
+   "Ninguém te avisa sobre isso, mas pode mudar tudo.",
+   "Pare o que você está fazendo e escuta isso."
+  ],
+  "cenas": [
+   "Apresente a situação comum \"Todo mundo começa a ___ e acha que está indo bem…\"",
+   "Mostre o problema escondido \"Só que tem um detalhe que quase ninguém percebe: ___ (explique o risco ou erro).\"",
+   "Mostre o que fazer \"Pra não passar por isso, faça assim: ___ (mostre na prática).\""
+  ],
+  "conclusao": "“Se isso te ajudou, comenta um aqui embaixo.”"
+ },
+ {
+  "id": 14,
+  "ganchos": [
+   "Os 3 melhores [ferramentas, dicas, estratégias] pra você.",
+   "Top 3 que vão mudar seu jeito de [atividade].",
+   "Quer saber o melhor? Assiste até o final."
+  ],
+  "cenas": [
+   "Introdução curta \"Eu separei os 3 melhores ___ para quem quer ___.\"",
+   "Item 3 \"Número 3: ___ porque ___ (exemplo rápido).\"",
+   "Item 2 \"Número 2: ___ porque ___.\"",
+   "Item 1 \"E o número 1, que vai mudar tudo: ___ porque ___.\""
+  ],
+  "conclusao": "“Qual você já usa? Comenta aqui!”"
+ },
+ {
+  "id": 15,
+  "ganchos": [
+   "Se eu pudesse voltar no tempo, eu faria isso diferente.",
+   "O que eu gostaria de ter aprendido antes.",
+   "Se eu soubesse disso, teria economizado muito."
+  ],
+  "cenas": [
+   "Contextualize seu início \"Quando comecei com ___, eu fazia ___ achando que era certo.\"",
+   "Mostre o erro ou decisão ruim \"Isso me fez perder ___ / gastar ___ / desperdiçar ___.\"",
+   "Diga o que você faria agora \"Se fosse hoje, eu faria assim: ___ (explique a nova estratégia).\""
+  ],
+  "conclusao": "“Se você está começando agora, salva esse vídeo!”"
+ },
+ {
+  "id": 16,
+  "ganchos": [
+   "Você já parou pra se perguntar por que ___?",
+   "Ninguém nunca te fez essa pergunta…",
+   "E se eu te dissesse que ___?"
+  ],
+  "cenas": [
+   "Apresente a pergunta provocativa \"Todo mundo pergunta sobre ___, mas ninguém pergunta: ___.\"",
+   "Explique o impacto da pergunta \"E essa pergunta muda tudo porque ___ (explique o motivo).\"",
+   "Mostre como aplicar \"Da próxima vez que você for ___, pense em ___.\""
+  ],
+  "conclusao": "“Isso faz sentido pra você? Escreve aqui nos comentários.”"
+ },
+ {
+  "id": 17,
+  "ganchos": [
+   "Esse é o truque que os profissionais usam e não contam.",
+   "Quer parecer um especialista? Faz isso.",
+   "Esse detalhe faz você parecer nível avançado."
+  ],
+  "cenas": [
+   "Introduza a dica como algo insider \"Quem é iniciante faz ___, mas quem é profissional faz ___.\"",
+   "Demonstre a técnica Mostre visualmente: suas mãos, ferramentas, antes e depois",
+   "Explique por que funciona \"Isso funciona porque ___ (benefício claro).\""
+  ],
+  "conclusao": "“Se você usar essa dica, me conta aqui!”"
+ },
+ {
+  "id": 18,
+  "ganchos": [
+   "Já viu isso aqui? Eu tentei recriar no meu nicho.",
+   "E se eu adaptasse isso para [tema do nicho]?",
+   "Olha o que eu inventei inspirado nisso."
+  ],
+  "cenas": [
+   "Mostre a referência famosa \"Você já viu aquele vídeo/foto de ___? Resolvi testar com ___.\"",
+   "Mostre você adaptando Grave enquanto cria: \"Tô tentando aqui, olha só…\"",
+   "Mostre o resultado final \"Ficou assim! O que você acha?\""
+  ],
+  "conclusao": "“Devo fazer outra versão? Escreve aqui!”"
+ },
+ {
+  "id": 19,
+  "ganchos": [
+   "O que você espera vs o que realmente acontece.",
+   "Olha a diferença entre expectativa e realidade.",
+   "Você também já passou por isso?"
+  ],
+  "cenas": [
+   "Mostre a expectativa Faça um take bonito ou idealizado: \"Quando você acha que ___ vai ser fácil…\"",
+   "Corte para a realidade Mostre o caos, dificuldade ou resultado ruim: \"Mas na prática acontece isso: ___.\"",
+   "Feche com humor e dica \"Então da próxima vez, tente ___ (dica prática).\""
+  ],
+  "conclusao": "“Quem já viveu isso, comenta aqui.”"
+ },
+ {
+  "id": 20,
+  "ganchos": [
+   "Todo dia alguém me pergunta isso…",
+   "Essa é a pergunta campeã aqui no canal.",
+   "Vou responder de uma vez por todas."
+  ],
+  "cenas": [
+   "Apresente a pergunta \"Me perguntam sempre: ___ (pergunta sobre o nicho).\"",
+   "Explique rapidamente a resposta \"E a resposta é: ___ (clareza total).\"",
+   "Demonstre se possível Mostre um exemplo visual ou passo simples"
+  ],
+  "conclusao": "“Se ficou dúvida, pergunta aqui!”"
+ },
+ {
+  "id": 21,
+  "ganchos": [
+   "Todo dia alguém me pergunta isso…",
+   "Essa é a pergunta campeã aqui no canal.",
+   "Vou responder de uma vez por todas."
+  ],
+  "cenas": [
+   "Apresente a pergunta \"Me perguntam sempre: ___ (pergunta sobre o nicho).\"",
+   "Explique rapidamente a resposta \"E a resposta é: ___ (clareza total).\"",
+   "Demonstre se possível Mostre um exemplo visual ou passo simples"
+  ],
+  "conclusao": "“Se ficou dúvida, pergunta aqui!”"
+ },
+ {
+  "id": 22,
+  "ganchos": [
+   "Você jogaria isso fora? Eu transformei em algo incrível.",
+   "Olha o que dá pra fazer com isso aqui.",
+   "Assiste até o final antes de descartar isso."
+  ],
+  "cenas": [
+   "Mostre o objeto ou situação subestimada \"Muita gente joga ___ fora ou ignora.\"",
+   "Explique o potencial escondido \"Mas eu descobri que dá pra transformar em ___.\"",
+   "Mostre a transformação passo a passo Grave você criando ou mostrando o processo"
+  ],
+  "conclusao": "“Valeu a pena? Me diz aqui!”"
+ },
+ {
+  "id": 23,
+  "ganchos": [
+   "Se você tem 1 minuto, precisa aprender isso.",
+   "Um truque de 1 minuto que vai salvar seu dia.",
+   "Eu não acredito que ninguém fala disso!"
+  ],
+  "cenas": [
+   "Contextualize o problema \"Você já ficou preso tentando ___ (ação do nicho)?\"",
+   "Mostre o truque rápido \"Em menos de 1 minuto, dá pra resolver assim: ___ (mostre a ação).\"",
+   "Demonstre visualmente Faça close nas mãos, ferramentas ou tela enquanto aplica"
+  ],
+  "conclusao": "“Aprendeu? Marca alguém que precisa ver isso.”"
+ },
+ {
+  "id": 24,
+  "ganchos": [
+   "Se isso já aconteceu com você, assiste até o final.",
+   "Cuidado! Isso pode te custar caro.",
+   "Ninguém te avisa sobre isso!"
+  ],
+  "cenas": [
+   "Explique a situação comum \"Quando você faz ___, pode acontecer isso aqui: ___ (explique o problema).\"",
+   "Crie tensão \"Isso já aconteceu comigo e eu quase perdi ___.\"",
+   "Mostre a prevenção \"Pra não passar por isso, sempre faça ___ (mostre o passo).\""
+  ],
+  "conclusao": "“Já sabia dessa? Comenta aqui!”"
+ },
+ {
+  "id": 25,
+  "ganchos": [
+   "Você consegue acertar isso em 5 segundos?",
+   "Teste rápido: qual você escolheria?",
+   "Responde rápido antes que eu te mostre a resposta!"
+  ],
+  "cenas": [
+   "Apresente a pergunta visual \"Olha essas opções: ___, ___ e ___ (mostre na tela ou com objetos).\"",
+   "Dê tempo pro público pensar \"Qual você acha que é a certa? Vou dar 5 segundos…\" (conte rápido)",
+   "Mostre a resposta correta \"É essa aqui! Porque ___ (explique o motivo).\""
+  ],
+  "conclusao": "“Acertou? Me conta aqui embaixo.”"
+ },
+ {
+  "id": 26,
+  "ganchos": [
+   "Olha o que dá pra fazer com isso que você jogaria fora!",
+   "Eu transformei isso em algo incrível.",
+   "Assiste, porque o resultado vai te chocar."
+  ],
+  "cenas": [
+   "Mostre o objeto sem valor \"Isso aqui parece inútil: ___.\"",
+   "Mostre a ideia de transformação \"Mas eu usei pra criar ___.\"",
+   "Demonstre o processo Mostre o passo a passo rápido, cortes dinâmicos"
+  ],
+  "conclusao": "“Quem mais faria isso? Marca alguém!”"
+ },
+ {
+  "id": 27,
+  "ganchos": [
+   "Olha o que dá pra fazer com isso que você jogaria fora!",
+   "Eu transformei isso em algo incrível.",
+   "Assiste, porque o resultado vai te chocar."
+  ],
+  "cenas": [
+   "Mostre o objeto sem valor \"Isso aqui parece inútil: ___.\"",
+   "Mostre a ideia de transformação \"Mas eu usei pra criar ___.\"",
+   "Demonstre o processo Mostre o passo a passo rápido, cortes dinâmicos"
+  ],
+  "conclusao": "“Quem mais faria isso? Marca alguém!”"
+ },
+ {
+  "id": 28,
+  "ganchos": [
+   "Se você é iniciante, precisa ver isso.",
+   "Todo iniciante já se perguntou isso…",
+   "Aprendi isso no começo e mudou tudo."
+  ],
+  "cenas": [
+   "Traga a pergunta comum \"A pergunta que todo mundo faz no início é: ___.\"",
+   "Explique a resposta simples \"E a resposta é bem fácil: ___ (explique com clareza).\"",
+   "Demonstre um exemplo Mostre na prática como aplicar a dica"
+  ],
+  "conclusao": "“Se você está começando, salva esse vídeo!”"
+ },
+ {
+  "id": 29,
+  "ganchos": [
+   "Você já reparou nesse detalhe?",
+   "Isso passa despercebido, mas faz toda a diferença.",
+   "Depois que você ver isso, nunca mais vai esquecer."
+  ],
+  "cenas": [
+   "Apresente algo familiar \"Todo mundo olha pra ___, mas ninguém repara em ___.\"",
+   "Mostre o detalhe escondido \"Olha isso aqui! Repara bem… (close no detalhe).\"",
+   "Explique a importância \"Esse detalhe faz diferença porque ___.\""
+  ],
+  "conclusao": "“Você já sabia disso? Comenta aqui.”"
+ },
+ {
+  "id": 30,
+  "ganchos": [
+   "Quer economizar horas/dinheiro? Faz isso!",
+   "Eu levei anos pra descobrir isso…",
+   "Esse truque vai mudar seu jeito de trabalhar."
+  ],
+  "cenas": [
+   "Explique o problema comum \"Muita gente perde ___ fazendo ___.\"",
+   "Mostre a solução rápida \"Eu descobri que fazendo ___ você economiza ___.\"",
+   "Demonstre na prática Corte rápido mostrando a aplicação"
+  ],
+  "conclusao": "“Gostou dessa dica? Salva pra usar depois!”"
+ },
+ {
+  "id": 31,
+  "ganchos": [
+   "Isso mudou totalmente minha forma de pensar.",
+   "Eu nunca mais fiz [atividade] do mesmo jeito.",
+   "Essa mudança de mentalidade me fez evoluir."
+  ],
+  "cenas": [
+   "Explique a mentalidade antiga \"Antes eu pensava assim: ___.\"",
+   "Mostre o problema \"Isso me fazia perder tempo/dinheiro porque ___.\"",
+   "Mostre a nova mentalidade \"Agora eu penso assim: ___ e tudo mudou.\""
+  ],
+  "conclusao": "“Faz sentido pra você? Me conta!”"
+ },
+ {
+  "id": 32,
+  "ganchos": [
+   "Quer ver como isso é feito de verdade?",
+   "O que ninguém mostra nos bastidores.",
+   "Olha o que acontece por trás das câmeras."
+  ],
+  "cenas": [
+   "Mostre o objeto ou resultado final \"Você já viu isso pronto: ___.\"",
+   "Leve para o bastidor \"Mas olha como a gente faz: ___ (mostre o processo real).\"",
+   "Explique a importância \"Esse detalhe é o que garante ___ (benefício).\""
+  ],
+  "conclusao": "“Curtiu ver os bastidores? Comenta aqui.”"
+ },
+ {
+  "id": 33,
+  "ganchos": [
+   "Olha como começou e onde chegou!",
+   "De iniciante a expert em 1 minuto.",
+   "Você não acredita como era no começo."
+  ],
+  "cenas": [
+   "Mostre o começo ruim \"Quando eu comecei, era assim: ___ (mostre visual ou descreva).\"",
+   "Mostre um pouco do processo \"Com o tempo, eu comecei a fazer ___ e melhorar.\"",
+   "Mostre o resultado atual \"Hoje está assim: ___ (resultado visual).\""
+  ],
+  "conclusao": "“Quem também começou do zero? Escreve EU aqui!”"
+ },
+ {
+  "id": 34,
+  "ganchos": [
+   "Você pula esse passo e nem percebe…",
+   "Isso aqui é o que separa amadores de profissionais.",
+   "Se você não faz isso, está perdendo resultado."
+  ],
+  "cenas": [
+   "Apresente o fluxo comum do nicho: \"A maioria faz assim: ___.\"",
+   "Mostre o passo esquecido: \"Mas existe um detalhe escondido: antes de ___ você precisa ___.\"",
+   "Demonstre esse passo: Mostre na prática ou descreva o processo rapidamente"
+  ],
+  "conclusao": "“Já fazia isso? Ou vai começar agora? Comenta aqui.”"
+ },
+ {
+  "id": 35,
+  "ganchos": [
+   "Se eu pudesse te dar só uma dica, seria essa.",
+   "Uma coisa simples que mudou completamente meus resultados.",
+   "Essa dica vale ouro!"
+  ],
+  "cenas": [
+   "Explique seu contexto inicial: \"Eu estava lutando pra conseguir ___.\"",
+   "Mostre a virada de chave: \"Até que descobri que precisava fazer ___.\"",
+   "Demonstre de forma visual: Mostre como faz ou o antes/depois rapidamente"
+  ],
+  "conclusao": "“Salva esse vídeo e me conta se te ajudou!”"
+ },
+ {
+  "id": 36,
+  "ganchos": [
+   "Parece mentira, mas funciona mesmo.",
+   "Eu duvidei até ver funcionando.",
+   "Você não vai acreditar até testar."
+  ],
+  "cenas": [
+   "Mostre o problema inicial: \"Quando você tenta ___ e nunca dá certo…\"",
+   "Apresente o truque inusitado: \"Testei isso aqui: ___.\"",
+   "Mostre o resultado imediato: \"Olha isso! ___ (resultado ou reação).\""
+  ],
+  "conclusao": "“Vai testar também? Me conta depois!”"
+ },
+ {
+  "id": 37,
+  "ganchos": [
+   "Alguém me perguntou isso e olha só a resposta…",
+   "Comentaram isso aqui e você também vai querer saber.",
+   "Essa pergunta merece um vídeo!"
+  ],
+  "cenas": [
+   "Mostre o comentário (ou fale em voz alta): \"O [usuário/cliente] perguntou: '___?'.\"",
+   "Responda de forma prática: \"E a resposta é: ___ (explique simples).\"",
+   "Mostre exemplo rápido: Visualize com produto, gesto ou imagem"
+  ],
+  "conclusao": "“Tem mais dúvidas? Deixa aqui nos comentários!”"
+ },
+ {
+  "id": 38,
+  "ganchos": [
+   "Se você faz isso, pare agora!",
+   "O maior erro que pode acabar com seus resultados.",
+   "Não cometa isso!"
+  ],
+  "cenas": [
+   "Mostre o erro com exemplo visual: \"Muita gente faz ___ achando que ajuda…\"",
+   "Explique a consequência negativa: \"Mas isso faz você perder ___ / estragar ___.\"",
+   "Mostre o jeito certo: \"Em vez disso, faça ___ (demonstre).\""
+  ],
+  "conclusao": "“Você já fazia errado? Conta aqui!”"
+ },
+ {
+  "id": 39,
+  "ganchos": [
+   "Eu fiz isso usando só [ferramenta/objeto].",
+   "Você consegue fazer isso com apenas uma ferramenta?",
+   "Olha o que dá pra criar com isso aqui."
+  ],
+  "cenas": [
+   "Apresente a ferramenta: \"Hoje eu só usei ___ pra criar/fazer ___.\" Cena 2: Mostre o processo rápido: Grave os cortes principais enquanto executa",
+   "Revele o resultado: \"Olha como ficou só com ___!\""
+  ],
+  "conclusao": "“Já tentou algo assim? Me fala aqui!”"
+ },
+ {
+  "id": 40,
+  "ganchos": [
+   "Você já viu isso acontecendo em câmera lenta?",
+   "Olha só os detalhes…",
+   "Vou te mostrar algo que você nunca reparou."
+  ],
+  "cenas": [
+   "Explique o que vai mostrar: \"Quando você faz ___, olha o que acontece…\"",
+   "Mostre o processo em câmera lenta ou close: Foco em movimento ou detalhe do nicho",
+   "Explique enquanto mostra: \"Repara nisso aqui, é por isso que ___.\""
+  ],
+  "conclusao": "“Incrível, né? Me diz o que achou.”"
+ },
+ {
+  "id": 41,
+  "ganchos": [
+   "Antes de começar, confira isso!",
+   "Use esse checklist pra não errar.",
+   "3 passos antes de [atividade]."
+  ],
+  "cenas": [
+   "Apresente a importância: \"Antes de ___, sempre confiro isso…\"",
+   "Liste passo 1: \"Primeiro: ___ (mostre visual).\"",
+   "Passo 2: \"Depois: ___ (demonstre).\"",
+   "Passo 3: \"Por último: ___ (explique resultado).\""
+  ],
+  "conclusao": "“Salva esse checklist pra não esquecer!”"
+ },
+ {
+  "id": 42,
+  "ganchos": [
+   "Nunca vi ninguém ensinar isso…",
+   "Esse detalhe faz você parecer um expert.",
+   "Pouca gente sabe disso!"
+  ],
+  "cenas": [
+   "Mostre algo comum: \"Todo mundo faz ___ do jeito tradicional…\"",
+   "Apresente seu truque: \"Mas se você fizer assim: ___, o resultado melhora muito.\"",
+   "Demonstre na prática: Mostre a execução e o resultado final"
+  ],
+  "conclusao": "“Valeu a dica? Me conta aqui.”"
+ },
+ {
+  "id": 43,
+  "ganchos": [
+   "Você já viu isso acontecer?",
+   "Parece estranho, mas faz sentido!",
+   "Você não vai acreditar nisso aqui…"
+  ],
+  "cenas": [
+   "Mostre o elemento estranho ou inesperado: \"Olha isso aqui: ___ (objeto/processo).\"",
+   "Explique o contexto: \"À primeira vista parece inútil, mas serve pra ___.\"",
+   "Mostre em ação: Demonstre rapidamente enquanto explica"
+  ],
+  "conclusao": "“Você usaria isso? Comenta aqui!”"
+ },
+ {
+  "id": 44,
+  "ganchos": [
+   "Quase ninguém fala disso porque parece errado…",
+   "Esse truque é quase proibido, mas funciona!",
+   "Você nunca viu alguém fazer isso aqui!"
+  ],
+  "cenas": [
+   "Introduza algo polêmico: \"Todo mundo te ensina a fazer ___, mas eu faço assim e dá mais certo.\"",
+   "Mostre o método inusitado: \"Olha só: em vez de ___, eu ___.\"",
+   "Demonstre o resultado: Corte mostrando a prova ou antes/depois"
+  ],
+  "conclusao": "“E aí, você teria coragem de tentar? Comenta aqui!”"
+ },
+ {
+  "id": 45,
+  "ganchos": [
+   "O acabamento é o que faz toda a diferença.",
+   "Você sabia que isso muda totalmente o resultado?",
+   "Esse detalhe no final faz parecer profissional!"
+  ],
+  "cenas": [
+   "Mostre algo pronto, mas imperfeito: \"Tá vendo isso? Parece bom, mas falta algo…\"",
+   "Apresente o acabamento: \"O truque é finalizar assim: ___.\"",
+   "Demonstre na prática: Mostre as mãos aplicando o acabamento"
+  ],
+  "conclusao": "“Já usava essa técnica? Conta aqui!”"
+ },
+ {
+  "id": 46,
+  "ganchos": [
+   "Vou te ensinar algo em 3 movimentos.",
+   "Você não precisa de nada além disso aqui.",
+   "Presta atenção, é rapidinho!"
+  ],
+  "cenas": [
+   "Explique o objetivo: \"Pra fazer ___, você só precisa desses 3 movimentos.\"",
+   "Movimento 1: mostre e diga: \"Primeiro você ___.\"",
+   "Movimento 2: mostre e diga: \"Depois você ___.\"",
+   "Movimento 3: mostre e diga: \"E por fim ___.\""
+  ],
+  "conclusao": "“Fácil, né? Marca alguém pra aprender também!”"
+ },
+ {
+  "id": 47,
+  "ganchos": [
+   "Se isso acontecer, não entre em pânico!",
+   "Já deu errado comigo, e foi assim que resolvi.",
+   "Isso salva quando tudo sai do controle."
+  ],
+  "cenas": [
+   "Mostre o problema: \"Tava fazendo ___ e de repente ___ (algo deu errado).\"",
+   "Explique a reação: \"Na hora pensei que tinha perdido tudo.\"",
+   "Mostre a solução: \"Mas aí eu fiz isso: ___ (demonstre na prática).\""
+  ],
+  "conclusao": "“Já passou por isso? Me conta!”"
+ },
+ {
+  "id": 48,
+  "ganchos": [
+   "Você não precisa de horas pra isso…",
+   "Esse método leva só 60 segundos!",
+   "Vou te provar agora."
+  ],
+  "cenas": [
+   "Explique a tarefa que parece demorada: \"Normalmente demora muito pra ___.\"",
+   "Apresente o método rápido: \"Mas se você fizer assim: ___, termina rapidinho.\"",
+   "Mostre a execução: Faça cortes dinâmicos enquanto realiza"
+  ],
+  "conclusao": "“Quem aí já sabia desse truque? Comenta!”"
+ },
+ {
+  "id": 49,
+  "ganchos": [
+   "Olha como eu economizei fazendo isso!",
+   "Em vez de gastar $$$, fiz em casa.",
+   "Você não vai acreditar quanto isso custou…"
+  ],
+  "cenas": [
+   "Mostre o objeto caro como referência: \"Isso aqui custa em média ___.\"",
+   "Mostre sua versão simples: \"Mas eu fiz assim, gastando só ___.\"",
+   "Mostre o processo: Demonstre em cortes rápidos"
+  ],
+  "conclusao": "“Faria também? Me diz aqui!”"
+ },
+ {
+  "id": 50,
+  "ganchos": [
+   "Todo mundo faz do mesmo jeito… menos eu.",
+   "Você nunca vai ver alguém te ensinar isso.",
+   "Essa abordagem é totalmente diferente!"
+  ],
+  "cenas": [
+   "Mostre o jeito comum: \"Todo mundo tenta fazer ___ assim.\"",
+   "Apresente o seu jeito: \"Mas eu descobri que dá pra fazer assim: ___.\"",
+   "Demonstre visualmente: Mostre o processo ou ferramenta"
+  ],
+  "conclusao": "“Gostou desse método alternativo? Comenta!”"
+ },
+ {
+  "id": 51,
+  "ganchos": [
+   "Você nunca perguntou isso… mas deveria.",
+   "Essa pergunta vai mudar como você vê [nicho].",
+   "Se eu soubesse disso antes…"
+  ],
+  "cenas": [
+   "Apresente a pergunta: \"A pergunta certa não é '?', é '?'.\"",
+   "Explique por que essa pergunta importa: \"Porque ela te faz pensar em ___.\"",
+   "Mostre aplicação prática: \"Na próxima vez que você for ___, se pergunte isso.\""
+  ],
+  "conclusao": "“Fez sentido? Deixa um nos comentários!”"
+ },
+ {
+  "id": 52,
+  "ganchos": [
+   "Não complique, resolva assim.",
+   "3 etapas simples pra resolver [problema].",
+   "Depois disso, nunca mais errei!"
+  ],
+  "cenas": [
+   "Apresente o problema: \"Quando ___ acontece, você pode resolver rápido.\"",
+   "Etapa 1: \"Primeiro faça ___ (mostre).\"",
+   "Etapa 2: \"Depois faça ___ (mostre).\"",
+   "Etapa 3: \"Por fim, finalize com ___ (demonstre).\""
+  ],
+  "conclusao": "“Vai tentar? Comenta aqui!”"
+ },
+ {
+  "id": 53,
+  "ganchos": [
+   "Olha o que você nunca viu por trás disso.",
+   "Todo mundo vê o resultado, mas ninguém vê isso.",
+   "Vou te mostrar um segredo de bastidor."
+  ],
+  "cenas": [
+   "Mostre o resultado pronto: \"Tá vendo isso aqui pronto? Parece simples…\"",
+   "Leve para o bastidor: \"Mas olha o que acontece por trás: ___.\"",
+   "Mostre o detalhe especial: Close ou demonstração prática"
+  ],
+  "conclusao": "“Curtiu ver os bastidores? Me conta!”"
+ },
+ {
+  "id": 54,
+  "ganchos": [
+   "Você já reparou nisso?",
+   "Pouca gente nota, mas faz toda diferença!",
+   "Depois que eu vi isso, nunca mais fiz errado."
+  ],
+  "cenas": [
+   "Mostre algo comum no nicho: \"Olha aqui, todo mundo faz isso e acha normal.\"",
+   "Revele o detalhe escondido: \"Mas tem um detalhe que quase ninguém vê: ___ (mostre o detalhe).\"",
+   "Explique o impacto: \"Esse detalhe faz toda a diferença porque ___.\""
+  ],
+  "conclusao": "“Já tinha notado isso? Comenta aqui!”"
+ },
+ {
+  "id": 55,
+  "ganchos": [
+   "Eu fazia isso e não percebia o problema…",
+   "Aprenda com o meu erro antes que aconteça com você.",
+   "Quase ninguém admite isso, mas eu vou contar."
+  ],
+  "cenas": [
+   "Contextualize: \"Durante meses eu fazia ___ achando que estava certo.\"",
+   "Mostre o impacto negativo: \"E isso me fez perder ___ / desperdiçar ___.\"",
+   "Explique o aprendizado: \"Depois que percebi, comecei a fazer ___.\""
+  ],
+  "conclusao": "“Você já fez esse erro? Me conta aqui.”"
+ },
+ {
+  "id": 56,
+  "ganchos": [
+   "Qual dessas você acha melhor?",
+   "Existem duas formas de fazer isso…",
+   "Vou te mostrar a diferença entre as duas."
+  ],
+  "cenas": [
+   "Mostre a forma tradicional: \"Primeiro jeito: ___ (mostre).\"",
+   "Mostre a forma alternativa: \"Agora olha esse outro jeito: ___ (mostre).\"",
+   "Explique vantagens/desvantagens: \"Essa faz ___, enquanto essa faz ___.\""
+  ],
+  "conclusao": "“Qual você prefere? Escreve aí!”"
+ },
+ {
+  "id": 57,
+  "ganchos": [
+   "Você já viu alguém mostrar isso aqui?",
+   "O segredo tá nesse momento do processo.",
+   "Ninguém fala disso, mas é aqui que a mágica acontece!"
+  ],
+  "cenas": [
+   "Mostre o processo geral: \"Enquanto fazemos ___, tem um detalhe importante aqui…\"",
+   "Revele o truque escondido: \"É nessa hora que eu faço ___ (demonstre).\"",
+   "Explique o impacto: \"Se você fizer isso, vai conseguir ___.\""
+  ],
+  "conclusao": "“Valeu a dica? Deixa um like!”"
+ },
+ {
+  "id": 58,
+  "ganchos": [
+   "Se eu soubesse disso antes, teria poupado muito esforço.",
+   "Isso teria mudado meu começo.",
+   "Deixa eu te poupar tempo…"
+  ],
+  "cenas": [
+   "Conte o contexto: \"No começo, eu fazia ___ e sofria pra ter resultado.\"",
+   "Explique o que descobriu: \"Depois percebi que era só fazer ___ (dica prática).\"",
+   "Mostre na prática: Faça uma demonstração ou antes/depois"
+  ],
+  "conclusao": "“Se você tá começando, salva esse vídeo!”"
+ },
+ {
+  "id": 59,
+  "ganchos": [
+   "Eu fiz um teste que ninguém acreditava que funcionava…",
+   "Será que isso dá certo mesmo?",
+   "O resultado me surpreendeu!"
+  ],
+  "cenas": [
+   "Apresente o teste: \"Vi alguém falando que se fizer ___ acontece ___.\"",
+   "Mostre você testando: \"Tô testando aqui agora, olha só…\"",
+   "Mostre o resultado: \"Caramba! Funcionou assim: ___.\""
+  ],
+  "conclusao": "“Vai testar também? Conta aqui!”"
+ },
+ {
+  "id": 60,
+  "ganchos": [
+   "Antes de começar, sempre faço isso.",
+   "Esse checklist nunca me deixou na mão.",
+   "Você precisa dessa lista!"
+  ],
+  "cenas": [
+   "Explique a importância: \"Pra não errar em ___, eu sigo sempre esses passos.\"",
+   "Passo 1: \"Verifico ___.\"",
+   "Passo 2: \"Depois checo ___.\"",
+   "Passo 3: \"Por fim confirmo ___.\""
+  ],
+  "conclusao": "“Quer que eu compartilhe o checklist completo? Comenta!”"
+ },
+ {
+  "id": 61,
+  "ganchos": [
+   "Você acha que isso aconteceu por sorte?",
+   "Vou te mostrar o que tem por trás desse resultado.",
+   "Nada disso é mágica, olha só."
+  ],
+  "cenas": [
+   "Mostre o resultado final: \"Tá vendo isso? Parece fácil…\"",
+   "Explique o esforço: \"Mas pra chegar aqui eu precisei ___.\"",
+   "Mostre bastidores ou processo: \"Olha como foi feito: ___.\""
+  ],
+  "conclusao": "“Agora você faria igual? Me diz aqui!”"
+ },
+ {
+  "id": 62,
+  "ganchos": [
+   "Pergunte isso a si mesmo antes de começar.",
+   "Essa pergunta vai mudar sua estratégia.",
+   "Depois que eu passei a me perguntar isso, tudo mudou."
+  ],
+  "cenas": [
+   "Apresente a situação: \"Toda vez que eu ia ___, eu travava.\"",
+   "Mostre a pergunta: \"Até que comecei a me perguntar: ___.\"",
+   "Explique o impacto: \"Isso mudou tudo porque ___.\""
+  ],
+  "conclusao": "“Vai usar essa pergunta? Escreve aqui!”"
+ },
+ {
+  "id": 63,
+  "ganchos": [
+   "Parece detalhe, mas faz toda a diferença no final.",
+   "Esse toque final deixa com cara de profissional.",
+   "Olha como muda depois disso."
+  ],
+  "cenas": [
+   "Mostre o item/processo quase pronto: \"Tá quase pronto, mas falta um detalhe.\"",
+   "Apresente o ajuste: \"Eu sempre faço isso: ___ (mostre).\"",
+   "Revele o resultado após ajuste: \"Olha a diferença depois de fazer isso!\""
+  ],
+  "conclusao": "“Você já fazia assim? Conta aqui!”"
+ },
+ {
+  "id": 64,
+  "ganchos": [
+   "Você faz isso sem perceber e perde resultado.",
+   "Cuidado com esse detalhe, ele acaba com tudo!",
+   "Esse é o erro silencioso que ninguém fala."
+  ],
+  "cenas": [
+   "Mostre algo comum: \"Muita gente faz ___ e acha que tá certo.\"",
+   "Revele o problema escondido: \"Mas por trás disso acontece ___ (explique o impacto negativo).\"",
+   "Mostre o jeito certo: \"Pra resolver, faça assim: ___ (demonstre rápido).\""
+  ],
+  "conclusao": "“Você fazia assim também? Me conta aqui!”"
+ },
+ {
+  "id": 65,
+  "ganchos": [
+   "Se isso acontecer, faça isso agora!",
+   "Um truque rápido pra salvar a situação.",
+   "Você vai precisar disso um dia."
+  ],
+  "cenas": [
+   "Mostre o problema inesperado: \"Quando ___ dá errado, parece que acabou tudo.\"",
+   "Explique a solução imediata: \"Mas tem um truque que salva na hora: ___.\"",
+   "Demonstre o truque: Mostre ao vivo o passo simples"
+  ],
+  "conclusao": "“Já te aconteceu isso? Comenta aqui!”"
+ },
+ {
+  "id": 66,
+  "ganchos": [
+   "Você não precisa ser expert pra fazer isso.",
+   "Eu fiz isso na primeira tentativa!",
+   "Até um iniciante consegue!"
+  ],
+  "cenas": [
+   "Mostre o resultado final simples: \"Olha isso aqui, parece complicado, né?\"",
+   "Explique que é fácil: \"Mas você só precisa seguir esses passos básicos.\"",
+   "Mostre os passos rápidos: \"Primeiro ___, depois ___, por último ___.\""
+  ],
+  "conclusao": "“Vai tentar aí? Marca alguém pra ver!”"
+ },
+ {
+  "id": 67,
+  "ganchos": [
+   "Você consegue fazer isso em 10 segundos?",
+   "Parece fácil, mas é mais difícil do que você pensa!",
+   "Topa o desafio?"
+  ],
+  "cenas": [
+   "Explique a tarefa: \"O desafio é simples: ___ (ação do nicho).\"",
+   "Comece o cronômetro: \"Valendo!\" (grave você executando em ritmo rápido)",
+   "Mostre o resultado final: \"Consegui? Quase? Olha só!\""
+  ],
+  "conclusao": "“Agora é sua vez, grava e me marca!”"
+ },
+ {
+  "id": 68,
+  "ganchos": [
+   "Esse recurso tá na sua frente e você não usa!",
+   "Pouca gente aproveita isso aqui.",
+   "Você já tentou usar isso?"
+  ],
+  "cenas": [
+   "Mostre o recurso/objeto escondido: \"Olha isso aqui, tá aqui o tempo todo: ___.\"",
+   "Explique a função: \"Ele serve pra ___, mas quase ninguém usa.\"",
+   "Demonstre a utilidade: Mostre aplicando no nicho"
+  ],
+  "conclusao": "“Sabia disso? Comenta aqui!”"
+ },
+ {
+  "id": 69,
+  "ganchos": [
+   "Vou te mostrar exatamente como fazer isso.",
+   "Segue esse passo a passo simples.",
+   "Ninguém mostra, mas é assim que faz!"
+  ],
+  "cenas": [
+   "Apresente o objetivo: \"Quer aprender a ___? Olha só…\"",
+   "Passo 1: mostre e explique",
+   "Passo 2: mostre e explique",
+   "Passo 3: mostre e explique"
+  ],
+  "conclusao": "“Fácil, né? Salva pra lembrar depois!”"
+ },
+ {
+  "id": 70,
+  "ganchos": [
+   "Esse pequeno ajuste mudou meu tempo de produção.",
+   "Economizei horas com isso!",
+   "Você também pode fazer assim."
+  ],
+  "cenas": [
+   "Mostre o fluxo lento inicial: \"Antes eu fazia ___ e demorava demais.\"",
+   "Revele o ajuste: \"Agora eu faço assim: ___.\"",
+   "Mostre o resultado mais rápido: \"Olha a diferença de tempo!\""
+  ],
+  "conclusao": "“Vai usar também? Me fala!”"
+ },
+ {
+  "id": 71,
+  "ganchos": [
+   "Já tentou fazer isso sem ajuda?",
+   "Olha como ficou quando eu tentei sozinho…",
+   "O que deu errado aqui?"
+  ],
+  "cenas": [
+   "Mostre sua tentativa inicial: \"Tentei fazer ___ sozinho e saiu isso aqui…\" (mostre um resultado engraçado)",
+   "Mostre o problema: \"O problema é que eu não ___ (passo técnico).\"",
+   "Mostre a correção: \"Depois descobri que era só ___.\""
+  ],
+  "conclusao": "“Você também já fez isso errado? Conta aí!”"
+ },
+ {
+  "id": 72,
+  "ganchos": [
+   "Você jogaria isso fora?",
+   "Olha só no que eu transformei isso aqui!",
+   "Nunca mais vou desperdiçar isso."
+  ],
+  "cenas": [
+   "Mostre o objeto inútil: \"Isso aqui parecia lixo: ___.\"",
+   "Explique a ideia: \"Eu resolvi transformar em ___.\"",
+   "Mostre o processo rápido: Mostre mãos, cortes e resultado"
+  ],
+  "conclusao": "“Ficou bom? Me conta o que achou!”"
+ },
+ {
+  "id": 73,
+  "ganchos": [
+   "Quer impressionar? Usa esse truque no final.",
+   "Esse detalhe deixa todo mundo de boca aberta!",
+   "Pouca gente faz isso, mas faz toda a diferença."
+  ],
+  "cenas": [
+   "Mostre algo pronto mas simples: \"Tá vendo isso? Parece legal, mas falta algo…\"",
+   "Mostre o truque final: \"Eu faço isso no final: ___.\"",
+   "Mostre o resultado impressionante: \"Olha a diferença depois desse toque!\""
+  ],
+  "conclusao": "“Curtiu? Deixa um emoji nos comentários!”"
+ },
+ {
+  "id": 74,
+  "ganchos": [
+   "E se você fizer isso todos os dias?",
+   "Você já parou pra pensar no resultado disso em 7 dias?",
+   "O que acontece depois de repetir isso por 1 semana?"
+  ],
+  "cenas": [
+   "Explique a ação simples: \"Se você fizer ___ (ação do nicho) todos os dias…\"",
+   "Crie expectativa: \"No começo não muda nada, mas…\"",
+   "Mostre o resultado acumulado: \"Olha o que acontece depois de ___ dias: ___ (mostre ou descreva resultado).\""
+  ],
+  "conclusao": "“Vai tentar? Me conta aqui!”"
+ },
+ {
+  "id": 75,
+  "ganchos": [
+   "Quer parecer profissional? Faz isso aqui.",
+   "Esse detalhe faz parecer nível avançado.",
+   "Você acha que é sorte? Olha o que fazem nos bastidores."
+  ],
+  "cenas": [
+   "Mostre o resultado final bonito: \"Tá vendo isso pronto? Parece simples…\"",
+   "Mostre o bastidor: \"Mas olha o que eu faço antes: ___.\"",
+   "Explique a técnica: \"Esse detalhe garante que ___ (benefício).\""
+  ],
+  "conclusao": "“Já usava essa técnica? Comenta!”"
+ },
+ {
+  "id": 76,
+  "ganchos": [
+   "Esse erro pode te custar dinheiro!",
+   "Cuidado! Muita gente faz isso e se arrepende.",
+   "Isso pode estar acabando com seus resultados."
+  ],
+  "cenas": [
+   "Mostre o erro visualmente: \"Quando você faz ___ (erro do nicho)…\"",
+   "Explique o impacto negativo: \"Você perde tempo/dinheiro porque ___.\"",
+   "Mostre o jeito certo: \"O correto é fazer assim: ___ (demonstre).\""
+  ],
+  "conclusao": "“Já cometeu esse erro? Me conta!”"
+ },
+ {
+  "id": 77,
+  "ganchos": [
+   "Olha o que um cliente me pediu!",
+   "Esse desafio quase me pegou de surpresa…",
+   "Você faria isso no lugar dele?"
+  ],
+  "cenas": [
+   "Conte a história real: \"Um cliente chegou e pediu: ___.\"",
+   "Mostre o desafio: \"Eu nunca tinha feito isso antes!\"",
+   "Mostre a solução aplicada: \"Resolvi assim: ___ (demonstre na prática).\""
+  ],
+  "conclusao": "“O que você faria? Comenta!”"
+ },
+ {
+  "id": 78,
+  "ganchos": [
+   "Isso aqui vai te salvar em 2 minutos!",
+   "Olha que truque rápido pra [atividade do nicho].",
+   "Nunca mais perca tempo com isso!"
+  ],
+  "cenas": [
+   "Explique o problema que demora: \"Normalmente, pra ___ você gasta muito tempo.\"",
+   "Mostre o hack: \"Mas se fizer assim, em 2 minutos tá pronto: ___.\"",
+   "Demonstre visualmente: Corte mostrando a aplicação real"
+  ],
+  "conclusao": "“Vai tentar esse hack? Marca alguém!”"
+ },
+ {
+  "id": 79,
+  "ganchos": [
+   "Muita gente não sabe que isso existe.",
+   "Você já viu isso aqui?",
+   "Esse detalhe pode mudar tudo!"
+  ],
+  "cenas": [
+   "Apresente o recurso/objeto: \"Olha isso aqui, pouca gente usa: ___.\"",
+   "Explique a utilidade: \"Serve pra ___ e facilita muito ___.\"",
+   "Mostre como usar: Demonstre o uso prático em segundos"
+  ],
+  "conclusao": "“Sabia disso? Me conta aqui!”"
+ },
+ {
+  "id": 80,
+  "ganchos": [
+   "Dá pra resolver isso sem gastar nada!",
+   "Economize usando esse truque.",
+   "Eu não gastei 1 centavo pra resolver."
+  ],
+  "cenas": [
+   "Mostre o problema comum: \"Quando acontece ___, muita gente compra ___.\"",
+   "Mostre a solução gratuita: \"Mas você pode resolver com o que já tem: ___.\"",
+   "Demonstre o processo: Mostre como usar ou fazer"
+  ],
+  "conclusao": "“Gostou dessa economia? Comenta!”"
+ },
+ {
+  "id": 81,
+  "ganchos": [
+   "Olha como melhorar isso 10x mais rápido!",
+   "Simples ajustes que deixam tudo melhor.",
+   "Seu resultado nunca mais será o mesmo!"
+  ],
+  "cenas": [
+   "Mostre o jeito comum: \"Normalmente fica assim: ___.\"",
+   "Apresente os ajustes: \"Mas se você fizer isso, melhora muito: ___.\"",
+   "Demonstre cada ajuste: Corte mostrando antes e depois de cada etapa"
+  ],
+  "conclusao": "“Vai tentar? Me conta aqui!”"
+ },
+ {
+  "id": 82,
+  "ganchos": [
+   "Você já viu alguém mostrar isso?",
+   "É aqui que a mágica acontece…",
+   "Por trás disso existe um truque simples!"
+  ],
+  "cenas": [
+   "Mostre o produto final ou serviço: \"Tá vendo isso pronto? Todo mundo vê assim.\"",
+   "Leve para o bastidor: \"Mas olha o que acontece antes: ___.\"",
+   "Mostre o processo rápido: Corte mostrando ferramentas, técnicas"
+  ],
+  "conclusao": "“Curtiu ver por trás? Comenta!”"
+ },
+ {
+  "id": 83,
+  "ganchos": [
+   "No final eu sempre faço isso e ninguém percebe.",
+   "Esse toque final faz parecer coisa de especialista.",
+   "Você precisa experimentar esse detalhe!"
+  ],
+  "cenas": [
+   "Mostre algo pronto mas sem graça: \"Assim já tá bom, mas dá pra melhorar…\"",
+   "Mostre o toque final: \"Eu sempre faço isso aqui no final: ___ (demonstre).\"",
+   "Mostre o resultado impressionante: \"Olha só como ficou depois disso!\""
+  ],
+  "conclusao": "“Você já usava esse toque? Me conta!”"
+ },
+ {
+  "id": 84,
+  "ganchos": [
+   "Parece que não pode, mas funciona demais…",
+   "Você não acredita que isso é permitido!",
+   "Esse truque é quase um segredo proibido!"
+  ],
+  "cenas": [
+   "Mostre a prática comum: \"Normalmente, as pessoas fazem ___.\"",
+   "Apresente o truque polêmico: \"Mas existe um jeito diferente: ___.\"",
+   "Demonstre o truque: Mostre passo a passo ou resultado"
+  ],
+  "conclusao": "“Você teria coragem de usar isso? Comenta!”"
+ },
+ {
+  "id": 85,
+  "ganchos": [
+   "Antes de [atividade], preste atenção nisso!",
+   "Ignorar isso pode arruinar tudo…",
+   "Nunca esqueça disso aqui!"
+  ],
+  "cenas": [
+   "Mostre o cenário: \"Quando você está ___, é fácil esquecer de ___.\"",
+   "Explique o impacto: \"Mas se você ignorar, pode acontecer ___.\"",
+   "Mostre a correção: \"Então sempre faça isso: ___.\""
+  ],
+  "conclusao": "“Você já fazia assim? Me conta.”"
+ },
+ {
+  "id": 86,
+  "ganchos": [
+   "Quer parecer avançado? Faz isso aqui!",
+   "Esse detalhe faz você parecer especialista.",
+   "Pouca gente sabe, mas isso impressiona!"
+  ],
+  "cenas": [
+   "Mostre o jeito básico: \"Se você fizer só assim: ___, fica ok.\"",
+   "Apresente o detalhe extra: \"Mas se adicionar isso aqui: ___, parece coisa de expert!\"",
+   "Demonstre na prática: Corte mostrando antes e depois"
+  ],
+  "conclusao": "“Gostou do truque? Marca alguém!”"
+ },
+ {
+  "id": 87,
+  "ganchos": [
+   "Olha como eu transformei um erro em algo incrível.",
+   "Eu quase joguei isso fora…",
+   "Isso aqui deu errado, mas virou ouro!"
+  ],
+  "cenas": [
+   "Mostre o erro inicial: \"Eu fiz ___ e saiu completamente errado: ___.\"",
+   "Explique a ideia de aproveitamento: \"Mas percebi que dava pra usar isso pra ___.\"",
+   "Mostre o resultado: \"Olha como ficou no final!\""
+  ],
+  "conclusao": "“Você já reaproveitou algo assim? Comenta!”"
+ },
+ {
+  "id": 88,
+  "ganchos": [
+   "Eu não acreditei até ver funcionando.",
+   "Será que isso dá certo mesmo?",
+   "Ninguém tinha tentado isso!"
+  ],
+  "cenas": [
+   "Apresente o experimento: \"Vi alguém dizendo que se você ___, acontece ___.\"",
+   "Mostre você testando: \"Tô testando aqui ao vivo…\"",
+   "Mostre o resultado: \"E olha só o que aconteceu: ___.\""
+  ],
+  "conclusao": "“Vai testar também? Me fala!”"
+ },
+ {
+  "id": 89,
+  "ganchos": [
+   "Não gaste dinheiro, faz isso!",
+   "Consertei isso usando algo que já tinha em casa.",
+   "Você vai economizar muito com isso."
+  ],
+  "cenas": [
+   "Mostre o problema: \"Isso aqui estava assim: ___ (mostre o defeito).\"",
+   "Apresente a solução: \"Eu usei ___ (ferramenta ou técnica simples).\"",
+   "Mostre o processo: Corte mostrando enquanto faz"
+  ],
+  "conclusao": "“Quem aí vai usar essa ideia? Conta!”"
+ },
+ {
+  "id": 90,
+  "ganchos": [
+   "Ninguém me contou isso e eu aprendi do jeito difícil.",
+   "Se eu soubesse disso antes…",
+   "Vou te poupar tempo e dinheiro."
+  ],
+  "cenas": [
+   "Contextualize o início: \"Quando comecei em ___, eu não sabia que ___.\"",
+   "Mostre a consequência: \"Isso me fez perder ___.\"",
+   "Mostre a lição: \"Hoje eu faço assim: ___.\""
+  ],
+  "conclusao": "“Alguém já te disse isso? Me fala!”"
+ },
+ {
+  "id": 91,
+  "ganchos": [
+   "Com isso simples você vai impressionar!",
+   "Eu fiz isso e todo mundo ficou surpreso.",
+   "Você também pode fazer!"
+  ],
+  "cenas": [
+   "Mostre o recurso simples: \"Eu só tinha ___ disponível.\"",
+   "Mostre o que fez: \"Resolvi criar/fazer ___ (mostre).\"",
+   "Mostre a reação ou resultado: \"Olha como ficou incrível!\""
+  ],
+  "conclusao": "“Quem aí vai tentar? Marca alguém!”"
+ },
+ {
+  "id": 92,
+  "ganchos": [
+   "Com isso simples você vai impressionar!",
+   "Eu fiz isso e todo mundo ficou surpreso.",
+   "Você também pode fazer!"
+  ],
+  "cenas": [
+   "Mostre o recurso simples: \"Eu só tinha ___ disponível.\"",
+   "Mostre o que fez: \"Resolvi criar/fazer ___ (mostre).\"",
+   "Mostre a reação ou resultado: \"Olha como ficou incrível!\""
+  ],
+  "conclusao": "“Quem aí vai tentar? Marca alguém!”"
+ },
+ {
+  "id": 93,
+  "ganchos": [
+   "Com isso aqui você faz 3x mais rápido.",
+   "Economize seu tempo!",
+   "Eu levei anos pra descobrir isso."
+  ],
+  "cenas": [
+   "Mostre o processo lento: \"Fazer ___ assim demora demais.\"",
+   "Apresente o truque: \"Mas com esse ajuste, fica rapidinho: ___.\"",
+   "Demonstre na prática: Mostre antes e depois em cortes rápidos"
+  ],
+  "conclusao": "“Vai usar essa dica? Escreve aqui!”"
+ },
+ {
+  "id": 94,
+  "ganchos": [
+   "Se você já sofreu com isso, olha essa solução.",
+   "Não passe mais por isso!",
+   "Esse detalhe evita muita dor de cabeça."
+  ],
+  "cenas": [
+   "Mostre o problema chato: \"Toda vez que você faz ___, pode acontecer ___.\"",
+   "Explique o motivo: \"Isso acontece porque ___.\"",
+   "Mostre a prevenção: \"Pra evitar, faça isso aqui: ___ (demonstre).\""
+  ],
+  "conclusao": "“Quem precisava dessa dica? Comenta!”"
+ },
+ {
+  "id": 95,
+  "ganchos": [
+   "Você já reparou nisso na embalagem?",
+   "Olha o que tá escondido aqui!",
+   "Depois que você vê isso, nunca mais esquece."
+  ],
+  "cenas": [
+   "Mostre a embalagem/produto: \"Todo mundo usa isso aqui e nem percebe…\"",
+   "Revele o truque ou recurso escondido: \"Mas olha esse detalhe: ___ (mostre).\"",
+   "Explique a utilidade: \"Serve pra ___ e facilita muito ___.\""
+  ],
+  "conclusao": "“Você já sabia disso? Comenta aqui!”"
+ },
+ {
+  "id": 96,
+  "ganchos": [
+   "Não complique, faz assim.",
+   "Três passos simples e tá resolvido!",
+   "Você vai se surpreender com a facilidade."
+  ],
+  "cenas": [
+   "Apresente o problema: \"Se você já passou por ___, sabe como é chato.\"",
+   "Passo 1: mostre e explique",
+   "Passo 2: mostre e explique",
+   "Passo 3: mostre e explique"
+  ],
+  "conclusao": "“Pronto! Gostou? Salva pra lembrar depois.”"
+ },
+ {
+  "id": 97,
+  "ganchos": [
+   "Se você faz isso, pode estar perdendo dinheiro.",
+   "Um detalhe simples que te salva de prejuízos.",
+   "Descobri isso e economizei muito."
+  ],
+  "cenas": [
+   "Mostre o erro caro: \"Muita gente faz ___ e acaba gastando ___.\"",
+   "Explique o ajuste: \"Mas se fizer assim: ___, você evita o prejuízo.\"",
+   "Demonstre na prática: Mostre o antes/depois"
+  ],
+  "conclusao": "“Já sabia disso? Conta aqui!”"
+ },
+ {
+  "id": 98,
+  "ganchos": [
+   "Topa esse desafio de hoje?",
+   "Em 1 minuto você pode fazer isso!",
+   "Quem faz isso primeiro?"
+  ],
+  "cenas": [
+   "Explique o desafio: \"Hoje o desafio é: ___ (ação do nicho).\"",
+   "Mostre você tentando: Grave-se executando rápido, com humor",
+   "Mostre resultado: \"Consegui? Quase? Olha só!\""
+  ],
+  "conclusao": "“Agora é a sua vez, grava e me marca!”"
+ },
+ {
+  "id": 99,
+  "ganchos": [
+   "Você nunca mais vai olhar isso da mesma forma.",
+   "Transformei isso em algo incrível!",
+   "Olha no que isso se tornou…"
+  ],
+  "cenas": [
+   "Mostre algo comum: \"Isso aqui parece simples: ___.\"",
+   "Explique a ideia: \"Mas eu resolvi transformar em ___.\"",
+   "Mostre o processo rápido: Cortes mostrando etapas"
+  ],
+  "conclusao": "“Gostou da ideia? Me conta!”"
+ },
+ {
+  "id": 100,
+  "ganchos": [
+   "Vou te mostrar algo que só quem faz sabe.",
+   "Esse detalhe faz toda diferença e ninguém mostra.",
+   "Você vai começar a usar isso hoje."
+  ],
+  "cenas": [
+   "Mostre o resultado pronto: \"Tá vendo isso? Parece fácil…\"",
+   "Revele o bastidor: \"Mas olha o que eu faço por trás: ___.\"",
+   "Demonstre a técnica: Corte com detalhe do processo"
+  ],
+  "conclusao": "“Valeu a dica? Deixa um !”"
+ },
+ {
+  "id": 101,
+  "ganchos": [
+   "Parece mágica, mas não é.",
+   "Você não acredita até ver funcionando.",
+   "Faz isso e se surpreenda!"
+  ],
+  "cenas": [
+   "Apresente o problema: \"Todo mundo acha difícil fazer ___.\"",
+   "Mostre o truque: \"Mas olha só como eu faço: ___.\"",
+   "Demonstre em tempo real: Corte mostrando aplicação"
+  ],
+  "conclusao": "“Vai testar? Comenta aqui!”"
+ },
+ {
+  "id": 102,
+  "ganchos": [
+   "Esse único detalhe mudou meus resultados.",
+   "Depois disso, nunca mais voltei atrás.",
+   "Se eu pudesse te dar uma só dica, seria essa."
+  ],
+  "cenas": [
+   "Conte o antes: \"Eu fazia ___ e sofria com ___.\"",
+   "Revele a descoberta: \"Até que descobri ___.\"",
+   "Mostre como aplicar: \"É só fazer assim: ___.\""
+  ],
+  "conclusao": "“Isso fez sentido pra você? Me conta!”"
+ },
+ {
+  "id": 103,
+  "ganchos": [
+   "Economize energia fazendo isso!",
+   "Não se desgaste à toa.",
+   "Esse truque me salvou várias vezes."
+  ],
+  "cenas": [
+   "Mostre a forma cansativa: \"Antes eu fazia ___ e ficava exausto.\"",
+   "Revele o hack: \"Agora eu faço assim: ___.\"",
+   "Demonstre de forma clara: Mostre a diferença prática"
+  ],
+  "conclusao": "“Gostou? Salva essa dica!”"
+ },
+ {
+  "id": 104,
+  "ganchos": [
+   "Esse detalhe final faz parecer coisa de especialista.",
+   "Olha como muda depois disso.",
+   "Pouca gente faz, mas faz toda diferença."
+  ],
+  "cenas": [
+   "Mostre algo quase pronto: \"Assim já tá bom, mas falta um toque…\"",
+   "Mostre o detalhe final: \"Eu sempre faço isso aqui: ___.\"",
+   "Mostre o resultado: \"Olha só como ficou depois!\""
+  ],
+  "conclusao": "“Você também faz isso? Me conta!”"
+ },
+ {
+  "id": 105,
+  "ganchos": [
+   "Você acha que está indo bem, mas isso te atrasa.",
+   "Esse erro parece pequeno, mas destrói resultados.",
+   "Quase ninguém percebe isso!"
+  ],
+  "cenas": [
+   "Mostre o hábito comum: \"Muita gente faz ___ achando que ajuda…\"",
+   "Explique o impacto oculto: \"Na verdade isso faz você perder ___.\"",
+   "Mostre a correção: \"Troque por isso aqui: ___ (demonstre).\""
+  ],
+  "conclusao": "“Você já fazia isso errado? Comenta!”"
+ },
+ {
+  "id": 106,
+  "ganchos": [
+   "Quer encantar as pessoas? Faz isso.",
+   "Um detalhe simples que gera admiração.",
+   "Todo mundo fica surpreso com isso!"
+  ],
+  "cenas": [
+   "Mostre o resultado básico: \"Olha isso pronto. Tá bom, mas…\"",
+   "Adicione o toque extra: \"Se você fizer isso aqui no final: ___.\"",
+   "Mostre a reação ou o impacto visual: \"Olha como muda totalmente!\""
+  ],
+  "conclusao": "“Vai usar esse toque? Me conta!”"
+ },
+ {
+  "id": 107,
+  "ganchos": [
+   "Você comete esse erro? Corrija em segundos!",
+   "Não precisa começar tudo de novo.",
+   "Isso resolve rapidinho!"
+  ],
+  "cenas": [
+   "Mostre o erro comum: \"Quando você faz ___ e dá errado assim: ___.\"",
+   "Mostre a solução rápida: \"Basta fazer isso aqui: ___ (demonstre).\"",
+   "Explique o motivo: \"Isso corrige porque ___.\""
+  ],
+  "conclusao": "“Quem já passou por isso? Conta aqui!”"
+ },
+ {
+  "id": 108,
+  "ganchos": [
+   "Repara nesse detalhe e sua visão muda.",
+   "Olha isso, quase ninguém nota.",
+   "Esse detalhe muda tudo!"
+  ],
+  "cenas": [
+   "Mostre algo pronto: \"Você olha e acha que é só ___.\"",
+   "Aproxime a câmera para o detalhe: \"Mas olha aqui de perto: ___.\"",
+   "Explique o impacto do detalhe: \"Isso faz diferença porque ___.\""
+  ],
+  "conclusao": "“Você já tinha visto isso? Me fala!”"
+ },
+ {
+  "id": 109,
+  "ganchos": [
+   "Esse truque resolve um problema que irrita todo mundo.",
+   "Cansou disso? Faz assim!",
+   "Você precisa disso agora."
+  ],
+  "cenas": [
+   "Mostre o problema chato: \"Quando você faz ___, sempre acontece ___.\"",
+   "Apresente o hack: \"Descobri que se fizer isso aqui: ___, resolve.\"",
+   "Mostre aplicando: Corte mostrando a execução"
+  ],
+  "conclusao": "“Gostou? Salva pra lembrar!”"
+ },
+ {
+  "id": 110,
+  "ganchos": [
+   "Acabou o recurso? Improvisa assim!",
+   "Você não precisa parar tudo.",
+   "Olha o que eu fiz sem [ferramenta/objeto]!"
+  ],
+  "cenas": [
+   "Mostre a falta de recurso: \"Eu ia fazer ___ mas estava sem ___.\" Cena 2: Mostre a solução improvisada: \"Então usei ___ no lugar.\"",
+   "Mostre o resultado: \"Olha como funcionou!\""
+  ],
+  "conclusao": "“Você já improvisou assim? Conta aqui!”"
+ },
+ {
+  "id": 111,
+  "ganchos": [
+   "Faça isso e nunca mais terá que refazer.",
+   "Esse passo economiza muito tempo.",
+   "Pouca gente faz e sofre depois."
+  ],
+  "cenas": [
+   "Mostre o problema de refazer: \"Quando você esquece ___, depois tem que fazer tudo de novo.\"",
+   "Mostre o passo essencial: \"Mas se fizer isso aqui no início: ___, evita retrabalho.\"",
+   "Demonstre aplicando: Corte mostrando o processo"
+  ],
+  "conclusao": "“Vai começar a fazer? Me conta!”"
+ },
+ {
+  "id": 112,
+  "ganchos": [
+   "Quer facilitar tudo? Faz isso!",
+   "Esse truque me poupou muita dor de cabeça.",
+   "Você nunca mais vai sofrer com isso."
+  ],
+  "cenas": [
+   "Mostre a forma difícil: \"Antes eu fazia assim e sofria: ___.\"",
+   "Mostre o truque simples: \"Mas se fizer desse jeito: ___, tudo flui.\"",
+   "Demonstre visualmente: Corte mostrando antes e depois"
+  ],
+  "conclusao": "“Vai usar? Comenta aqui!”"
+ },
+ {
+  "id": 113,
+  "ganchos": [
+   "Olha o que dá pra criar com coisas simples.",
+   "Eu fiz isso em poucos minutos.",
+   "Você também pode criar um desses."
+  ],
+  "cenas": [
+   "Mostre os materiais básicos: \"Usei só isso aqui: ___, ___ e ___.\"",
+   "Mostre o processo rápido: \"Primeiro ___, depois ___, por fim ___.\"",
+   "Mostre o resultado final: \"Olha como ficou!\""
+  ],
+  "conclusao": "“Gostou da ideia? Marca alguém!”"
+ },
+ {
+  "id": 114,
+  "ganchos": [
+   "Quer parecer pro? Faz isso!",
+   "Esse detalhe muda completamente a percepção.",
+   "Simples e eficaz!"
+  ],
+  "cenas": [
+   "Mostre algo básico: \"Assim já tá bom, mas olha o toque especial…\"",
+   "Mostre o detalhe aplicado: \"Quando você faz ___, o resultado sobe de nível.\"",
+   "Mostre a diferença visual: Corte comparando antes e depois"
+  ],
+  "conclusao": "“Quem vai usar isso? Comenta!”"
+ },
+ {
+  "id": 115,
+  "ganchos": [
+   "Quem é veterano usa isso e não conta.",
+   "Esse truque faz toda diferença!",
+   "Você vai começar a usar agora."
+  ],
+  "cenas": [
+   "Mostre o jeito comum: \"Muita gente faz assim: ___.\"",
+   "Mostre o truque avançado: \"Mas quem tem experiência faz isso: ___.\"",
+   "Demonstre aplicando: Corte mostrando antes e depois"
+  ],
+  "conclusao": "“Gostou? Marca alguém que precisa saber.”"
+ },
+ {
+  "id": 116,
+  "ganchos": [
+   "Se você está começando, preste atenção nisso.",
+   "Esse erro acaba com muita gente.",
+   "Não faça isso!"
+  ],
+  "cenas": [
+   "Mostre o erro típico: \"Muita gente no início faz ___ achando que ajuda.\"",
+   "Explique o impacto: \"Isso faz você perder ___.\"",
+   "Mostre o caminho certo: \"Pra evitar, faça isso aqui: ___.\""
+  ],
+  "conclusao": "“Você já sabia dessa? Comenta aqui!”"
+ },
+ {
+  "id": 117,
+  "ganchos": [
+   "Você não precisa comprar nada pra resolver isso!",
+   "Use o que já tem em casa.",
+   "Olha só que simples!"
+  ],
+  "cenas": [
+   "Mostre o problema: \"Eu precisava ___ mas não tinha ___.\"",
+   "Mostre a solução improvisada: \"Então usei ___ (objeto ou técnica).\"",
+   "Mostre o resultado: \"Olha como funcionou perfeitamente!\""
+  ],
+  "conclusao": "“Você já improvisou assim? Me conta!”"
+ },
+ {
+  "id": 118,
+  "ganchos": [
+   "Quer fazer mais rápido? Faz isso!",
+   "Esse truque economiza muito tempo.",
+   "Olha como acelera!"
+  ],
+  "cenas": [
+   "Mostre o jeito lento: \"Antes eu fazia assim e levava horas.\"",
+   "Mostre o truque rápido: \"Agora eu faço assim: ___.\"",
+   "Demonstre na prática: Corte mostrando resultado rápido"
+  ],
+  "conclusao": "“Vai usar essa dica? Comenta!”"
+ },
+ {
+  "id": 119,
+  "ganchos": [
+   "Parece invisível, mas faz toda diferença.",
+   "Se você não fizer isso, não vai dar certo.",
+   "Esse é o segredo!"
+  ],
+  "cenas": [
+   "Mostre o resultado pronto: \"Parece simples, mas tem algo escondido aqui.\"",
+   "Explique o passo invisível: \"Antes de chegar aqui, eu fiz ___.\"",
+   "Mostre como fazer: Demonstre a etapa com clareza"
+  ],
+  "conclusao": "“Você já fazia assim? Conta aqui!”"
+ },
+ {
+  "id": 120,
+  "ganchos": [
+   "Você acha que precisa de muito, mas não precisa!",
+   "Olha o que eu criei só com isso.",
+   "Pouco recurso, grande resultado!"
+  ],
+  "cenas": [
+   "Mostre os poucos recursos: \"Eu só tinha ___ e ___.\"",
+   "Explique a ideia: \"Resolvi tentar fazer ___.\"",
+   "Mostre o processo: Corte mostrando etapas rápidas"
+  ],
+  "conclusao": "“Quem aí vai tentar? Me conta!”"
+ },
+ {
+  "id": 121,
+  "ganchos": [
+   "Olha o que acontece com esse detalhe no final.",
+   "Esse acabamento muda tudo!",
+   "Você precisa ver isso."
+  ],
+  "cenas": [
+   "Mostre o item quase pronto: \"Assim já tá bom, mas falta algo…\"",
+   "Mostre o ajuste final: \"Se você fizer isso: ___, valoriza tudo.\"",
+   "Mostre a diferença visual: Antes e depois em cortes rápidos"
+  ],
+  "conclusao": "“Vai aplicar? Marca alguém!”"
+ },
+ {
+  "id": 122,
+  "ganchos": [
+   "Olha o que acontece com esse detalhe no final.",
+   "Esse acabamento muda tudo!",
+   "Você precisa ver isso."
+  ],
+  "cenas": [
+   "Mostre o item quase pronto: \"Assim já tá bom, mas falta algo…\"",
+   "Mostre o ajuste final: \"Se você fizer isso: ___, valoriza tudo.\"",
+   "Mostre a diferença visual: Antes e depois em cortes rápidos"
+  ],
+  "conclusao": "“Vai aplicar? Marca alguém!”"
+ },
+ {
+  "id": 123,
+  "ganchos": [
+   "Já fez esse teste? Faz agora!",
+   "Você vai se surpreender com o resultado.",
+   "Eu duvidei até ver."
+  ],
+  "cenas": [
+   "Apresente o teste: \"Dizem que se você fizer ___, acontece ___.\"",
+   "Mostre você testando: Grave enquanto aplica e reaja",
+   "Mostre o resultado: \"Olha só, funcionou mesmo!\""
+  ],
+  "conclusao": "“Vai testar também? Comenta aqui!”"
+ },
+ {
+  "id": 124,
+  "ganchos": [
+   "Pare de complicar, faz assim!",
+   "Eu fazia errado até aprender isso.",
+   "Você não precisa sofrer com isso!"
+  ],
+  "cenas": [
+   "Mostre o jeito complicado: \"Antes eu fazia ___ e era um caos.\"",
+   "Apresente a forma simples: \"Agora eu só faço assim: ___.\"",
+   "Mostre aplicando: Corte mostrando execução rápida"
+  ],
+  "conclusao": "“Facilitou pra você? Me conta!”"
+ },
+ {
+  "id": 125,
+  "ganchos": [
+   "Se fizer errado, olha o que acontece!",
+   "Cuidado! Isso pode destruir seu resultado.",
+   "Você já fez isso desse jeito?"
+  ],
+  "cenas": [
+   "Mostre o resultado errado: \"Quando você faz ___ assim, o resultado fica assim: ___ (mostre algo ruim).\"",
+   "Explique o motivo: \"Isso acontece porque ___.\"",
+   "Mostre o jeito certo: \"O correto é fazer assim: ___ (demonstre na prática).\""
+  ],
+  "conclusao": "“Você já fez errado? Me conta aqui!”"
+ },
+ {
+  "id": 126,
+  "ganchos": [
+   "Quer impressionar sem gastar nada?",
+   "Olha esse truque barato e incrível!",
+   "Você também pode fazer assim."
+  ],
+  "cenas": [
+   "Mostre algo simples: \"Com apenas ___ e ___ eu consegui fazer ___.\"",
+   "Explique a ideia: \"Muita gente pagaria caro, mas você pode criar assim.\" Cena 3: Demonstre o processo: Corte mostrando execução"
+  ],
+  "conclusao": "“Quem vai tentar? Marca alguém!”"
+ },
+ {
+  "id": 127,
+  "ganchos": [
+   "Se você está começando, precisa saber disso.",
+   "Eu queria que tivessem me avisado!",
+   "Isso vai te poupar tempo e erros."
+  ],
+  "cenas": [
+   "Conte sua experiência inicial: \"Quando comecei a ___, eu achava que ___.\"",
+   "Mostre o problema: \"Mas isso me fez perder ___.\"",
+   "Revele o aprendizado: \"Se eu tivesse feito assim: ___, seria mais fácil.\""
+  ],
+  "conclusao": "“Você sabia disso? Comenta!”"
+ },
+ {
+  "id": 128,
+  "ganchos": [
+   "Esse passo deixa tudo melhor!",
+   "Olha o que muda só de fazer isso.",
+   "Parece mágica!"
+  ],
+  "cenas": [
+   "Mostre algo pronto mas básico: \"Tá vendo isso? Assim já tá ok…\"",
+   "Mostre o passo extra: \"Mas se você fizer isso aqui no final: ___.\"",
+   "Mostre o resultado: \"Olha como fica incrível!\""
+  ],
+  "conclusao": "“Quem aí vai testar? Conta aqui!”"
+ },
+ {
+  "id": 129,
+  "ganchos": [
+   "Você nunca imaginou usar isso pra resolver!",
+   "Essa ferramenta foi feita pra outra coisa, mas funciona!",
+   "Olha essa ideia!"
+  ],
+  "cenas": [
+   "Mostre o problema: \"Eu precisava ___ mas não tinha a ferramenta certa.\"",
+   "Apresente a solução criativa: \"Usei ___ e olha o que aconteceu…\"",
+   "Mostre aplicando: Corte mostrando a execução"
+  ],
+  "conclusao": "“Já tentou algo assim? Me conta!”"
+ },
+ {
+  "id": 130,
+  "ganchos": [
+   "Você consegue fazer isso?",
+   "Eu duvido você tentar isso em casa!",
+   "Esse desafio parece fácil, mas não é!"
+  ],
+  "cenas": [
+   "Explique o desafio: \"Tente fazer ___ em menos de 30 segundos.\"",
+   "Mostre você tentando: Grave com emoção e humor",
+   "Mostre o resultado: \"Quase consegui! Olha só…\""
+  ],
+  "conclusao": "“Quem vai tentar? Marca alguém!”"
+ },
+ {
+  "id": 131,
+  "ganchos": [
+   "Você consegue fazer isso?",
+   "Eu duvido você tentar isso em casa!",
+   "Esse desafio parece fácil, mas não é!"
+  ],
+  "cenas": [
+   "Explique o desafio: \"Tente fazer ___ em menos de 30 segundos.\"",
+   "Mostre você tentando: Grave com emoção e humor",
+   "Mostre o resultado: \"Quase consegui! Olha só…\""
+  ],
+  "conclusao": "“Quem vai tentar? Marca alguém!”"
+ },
+ {
+  "id": 132,
+  "ganchos": [
+   "Se isso acontecer, não desista!",
+   "Dá pra salvar assim!",
+   "Eu achei que tinha perdido tudo…"
+  ],
+  "cenas": [
+   "Mostre o problema: \"Tava fazendo ___ e deu errado assim: ___.\" Cena 2: Explique o pensamento rápido: \"Mas eu lembrei de um truque…\"",
+   "Mostre a solução: \"Fiz isso aqui e salvei tudo: ___ (demonstre).\""
+  ],
+  "conclusao": "“Já precisou salvar algo assim? Conta!”"
+ },
+ {
+  "id": 133,
+  "ganchos": [
+   "Esse detalhe deixa com cara de especialista.",
+   "Olha como muda com esse toque final.",
+   "Pouca gente faz isso!"
+  ],
+  "cenas": [
+   "Mostre algo pronto básico: \"Assim tá bom, mas falta um acabamento…\"",
+   "Mostre o detalhe aplicado: \"Quando você faz ___ no final, muda tudo.\"",
+   "Mostre a diferença visual: Corte mostrando antes e depois"
+  ],
+  "conclusao": "“Gostou do resultado? Comenta!”"
+ },
+ {
+  "id": 134,
+  "ganchos": [
+   "Antes de começar, siga esse checklist.",
+   "Pra não errar, faz isso aqui.",
+   "Nunca mais cometi esse erro depois disso."
+  ],
+  "cenas": [
+   "Apresente a importância: \"Pra fazer ___ sem erros, eu sempre sigo esses passos.\"",
+   "Passo 1: Mostre e explique",
+   "Passo 2: Mostre e explique",
+   "Passo 3: Mostre e explique"
+  ],
+  "conclusao": "“Salva esse vídeo pra usar depois!”"
+ },
+ {
+  "id": 135,
+  "ganchos": [
+   "Quer transformar o básico em incrível?",
+   "Olha como isso muda tudo!",
+   "Esse truque vai te surpreender!"
+  ],
+  "cenas": [
+   "Mostre o resultado comum: \"Assim já tá bom, mas olha só…\"",
+   "Mostre o truque: \"Se você fizer ___, fica incrível.\"",
+   "Mostre o resultado final: Corte antes/depois bem rápido"
+  ],
+  "conclusao": "“Vai usar esse truque? Me conta!”"
+ },
+ {
+  "id": 136,
+  "ganchos": [
+   "Quer que isso dure mais? Faz isso!",
+   "Esse detalhe aumenta a vida útil.",
+   "Você vai economizar muito com isso."
+  ],
+  "cenas": [
+   "Mostre o uso comum: \"Todo mundo usa ___ assim, mas dura pouco.\"",
+   "Revele o truque: \"Se você fizer isso: ___, vai durar muito mais.\"",
+   "Mostre aplicando: Demonstre o passo na prática"
+  ],
+  "conclusao": "“Sabia disso? Comenta aqui!”"
+ },
+ {
+  "id": 137,
+  "ganchos": [
+   "Eu achava uma coisa… mas olha só.",
+   "Isso mudou completamente minha forma de ver.",
+   "Você vai se surpreender."
+  ],
+  "cenas": [
+   "Conte a crença inicial: \"Eu acreditava que ___ era a melhor forma.\"",
+   "Mostre o problema: \"Mas isso me limitava porque ___.\"",
+   "Revele a nova visão: \"Hoje faço assim: ___.\""
+  ],
+  "conclusao": "“Você já pensou nisso? Me conta!”"
+ },
+ {
+  "id": 138,
+  "ganchos": [
+   "Ninguém comenta esse detalhe!",
+   "Pouca gente percebe isso…",
+   "Isso faz toda diferença."
+  ],
+  "cenas": [
+   "Mostre o processo básico: \"Todo mundo faz ___ desse jeito.\"",
+   "Mostre o detalhe escondido: \"Mas se você fizer ___, fica muito melhor.\"",
+   "Demonstre ao vivo: Corte mostrando antes/depois"
+  ],
+  "conclusao": "“Já fazia assim? Comenta aqui!”"
+ },
+ {
+  "id": 139,
+  "ganchos": [
+   "Tá jogando dinheiro fora sem perceber!",
+   "Esse truque evita desperdício.",
+   "Economize agora mesmo!"
+  ],
+  "cenas": [
+   "Mostre o desperdício: \"Quando você faz ___ assim, perde ___.\"",
+   "Mostre a solução: \"Pra aproveitar ao máximo, faça isso: ___.\"",
+   "Demonstre na prática: Corte mostrando aplicação"
+  ],
+  "conclusao": "“Quem vai testar? Salva o vídeo!”"
+ },
+ {
+  "id": 140,
+  "ganchos": [
+   "Você consegue fazer isso?",
+   "Duvido que consiga na primeira vez!",
+   "Esse desafio é pra quem é bom mesmo!"
+  ],
+  "cenas": [
+   "Explique o desafio: \"Tente fazer ___ sem ___ (restrição divertida).\" Cena 2: Mostre você tentando: Grave em tempo real, com emoção",
+   "Mostre o resultado: \"Olha como ficou!\""
+  ],
+  "conclusao": "“Topa o desafio? Me marca!”"
+ },
+ {
+  "id": 141,
+  "ganchos": [
+   "Fez e não gostou? Dá pra arrumar!",
+   "Não precisa começar do zero.",
+   "Consertei isso rapidinho!"
+  ],
+  "cenas": [
+   "Mostre o resultado insatisfatório: \"Fiz ___ e não ficou legal…\"",
+   "Mostre a solução: \"Mas ajustei assim: ___.\"",
+   "Mostre o resultado final: \"Olha como melhorou!\""
+  ],
+  "conclusao": "“Você já consertou algo assim? Conta!”"
+ },
+ {
+  "id": 142,
+  "ganchos": [
+   "Quer impressionar seu cliente? Faz isso!",
+   "Esse toque final faz diferença.",
+   "Pouca gente faz, mas eles notam."
+  ],
+  "cenas": [
+   "Mostre o trabalho antes do detalhe: \"Assim já tá bom, mas…\"",
+   "Mostre o detalhe aplicado: \"Quando eu faço ___ no final, eles ficam assim: .\"",
+   "Mostre resultado final: Antes/depois lado a lado"
+  ],
+  "conclusao": "“Gostou? Marca alguém!”"
+ },
+ {
+  "id": 143,
+  "ganchos": [
+   "Por que gastar energia à toa?",
+   "Dá pra fazer isso com metade do esforço!",
+   "Você tá fazendo complicado demais!"
+  ],
+  "cenas": [
+   "Mostre o jeito cansativo: \"Antes eu fazia ___ e ficava exausto.\"",
+   "Mostre o truque simples: \"Descobri que assim: ___ é muito mais fácil.\"",
+   "Demonstre aplicando: Corte mostrando execução"
+  ],
+  "conclusao": "“Vai testar? Me conta aqui!”"
+ },
+ {
+  "id": 144,
+  "ganchos": [
+   "Cansado disso acontecer? Resolve assim!",
+   "Nunca mais passe por isso!",
+   "Esse detalhe evita dor de cabeça."
+  ],
+  "cenas": [
+   "Mostre o problema irritante: \"Quando você faz ___, sempre acontece ___.\"",
+   "Explique o motivo: \"Isso acontece porque ___.\"",
+   "Mostre a prevenção: \"Pra evitar, faça assim: ___.\""
+  ],
+  "conclusao": "“Já fazia assim? Comenta!”"
+ },
+ {
+  "id": 145,
+  "ganchos": [
+   "Quer ver resultado na hora?",
+   "Faz isso e olha só!",
+   "Eu testei e o resultado foi instantâneo."
+  ],
+  "cenas": [
+   "Mostre o problema inicial: \"Eu precisava de um resultado rápido em ___.\"",
+   "Mostre o truque: \"Tentei isso: ___.\"",
+   "Mostre o resultado imediato: \"Olha como ficou na hora!\""
+  ],
+  "conclusao": "“Gostou? Salva pra testar!”"
+ },
+ {
+  "id": 146,
+  "ganchos": [
+   "Você só vai acreditar vendo.",
+   "Eu duvidei, mas olha só…",
+   "Isso parece mentira!"
+  ],
+  "cenas": [
+   "Mostre o problema ou desafio: \"Eu precisava ___ e parecia impossível.\"",
+   "Apresente o truque: \"Testei isso aqui: ___.\"",
+   "Mostre o resultado: \"Olha só o que aconteceu!\""
+  ],
+  "conclusao": "“Vai testar também? Me conta!”"
+ },
+ {
+  "id": 147,
+  "ganchos": [
+   "Não precisa começar do zero!",
+   "Isso aqui salva quando você erra.",
+   "Eu quase perdi tudo, mas fiz isso…"
+  ],
+  "cenas": [
+   "Mostre o erro pronto: \"Tava quase finalizado, mas ficou assim: ___.\"",
+   "Explique a solução: \"Usei esse truque: ___.\"",
+   "Mostre o resultado: \"Olha como ficou depois!\""
+  ],
+  "conclusao": "“Já precisou salvar algo? Conta aqui!”"
+ },
+ {
+  "id": 148,
+  "ganchos": [
+   "Quer sair do básico? Faz isso!",
+   "Esse detalhe deixa com cara de profissional.",
+   "Olha a diferença!"
+  ],
+  "cenas": [
+   "Mostre algo simples: \"Assim tá bom, mas olha isso…\"",
+   "Mostre o ajuste: \"Eu faço isso aqui: ___.\"",
+   "Mostre o resultado final: \"Olha a diferença visual!\""
+  ],
+  "conclusao": "“Vai aplicar? Me conta!”"
+ },
+ {
+  "id": 149,
+  "ganchos": [
+   "Isso aqui todo mundo joga fora!",
+   "Olha no que eu transformei isso.",
+   "Nunca mais desperdice isso!"
+  ],
+  "cenas": [
+   "Mostre o item descartável: \"Muita gente joga ___ fora.\"",
+   "Explique a ideia: \"Eu usei pra fazer ___.\"",
+   "Mostre o processo rápido: Corte mostrando aplicação"
+  ],
+  "conclusao": "“Quem vai tentar? Marca alguém!”"
+ },
+ {
+  "id": 150,
+  "ganchos": [
+   "Sem tempo? Faz isso!",
+   "Esse truque salva na correria.",
+   "Eu uso sempre quando tô sem tempo."
+  ],
+  "cenas": [
+   "Mostre o processo demorado: \"Normalmente demora muito pra ___.\"",
+   "Mostre o truque: \"Mas eu faço assim: ___.\"",
+   "Mostre a execução: \"Olha só como adianta!\""
+  ],
+  "conclusao": "“Gostou? Salva pra lembrar!”"
+ },
+ {
+  "id": 151,
+  "ganchos": [
+   "Parece difícil, mas olha só.",
+   "Vou te provar que é simples.",
+   "Você também consegue!"
+  ],
+  "cenas": [
+   "Mostre o resultado final complexo: \"Olha isso, parece complicado né?\"",
+   "Explique a simplificação: \"Mas na verdade é só ___.\"",
+   "Mostre os passos curtos: \"Faz assim: ___, depois ___, pronto!\""
+  ],
+  "conclusao": "“Ficou fácil pra você? Comenta!”"
+ },
+ {
+  "id": 152,
+  "ganchos": [
+   "Faça isso antes e evite refazer tudo.",
+   "Esse detalhe te poupa horas!",
+   "Pouca gente faz isso."
+  ],
+  "cenas": [
+   "Mostre o problema do retrabalho: \"Se você não faz ___, depois precisa refazer tudo.\"",
+   "Mostre o detalhe preventivo: \"Eu sempre faço isso aqui antes: ___.\"",
+   "Mostre aplicando: Corte mostrando execução"
+  ],
+  "conclusao": "“Vai adotar essa dica? Me fala!”"
+ },
+ {
+  "id": 153,
+  "ganchos": [
+   "Errei, mas olha no que virou!",
+   "Nem tudo está perdido.",
+   "Você pode aproveitar isso também."
+  ],
+  "cenas": [
+   "Mostre o erro inicial: \"Tentei fazer ___ e saiu errado: ___.\"",
+   "Explique a ideia de reaproveitar: \"Mas pensei: e se eu usar isso pra ___?\"",
+   "Mostre o resultado final: \"Olha só o que virou!\""
+  ],
+  "conclusao": "“Você faria igual? Conta aqui!”"
+ },
+ {
+  "id": 154,
+  "ganchos": [
+   "Quer tentar algo novo? Faz assim!",
+   "Não precisa ter medo de testar.",
+   "Olha como eu fiz primeiro."
+  ],
+  "cenas": [
+   "Apresente a novidade: \"Queria testar ___ mas fiquei com medo de estragar.\"",
+   "Mostre a solução simples: \"Então fiz assim: ___ (mostre um teste pequeno).\"",
+   "Mostre o resultado: \"Deu super certo!\""
+  ],
+  "conclusao": "“Vai testar também? Me conta!”"
+ },
+ {
+  "id": 155,
+  "ganchos": [
+   "Esse toque final faz todo mundo falar UAU!",
+   "Você precisa tentar isso.",
+   "Olha a transformação!"
+  ],
+  "cenas": [
+   "Mostre algo quase pronto: \"Tá vendo? Assim já tá bom…\"",
+   "Mostre o toque final: \"Mas se você fizer isso: ___, fica incrível.\"",
+   "Mostre o resultado final: Antes/depois lado a lado"
+  ],
+  "conclusao": "“Quem vai tentar? Marca alguém!”"
+ },
+ {
+  "id": 156,
+  "ganchos": [
+   "Isso quase arruinou tudo!",
+   "Preste atenção, senão vai acontecer com você.",
+   "Eu aprendi do jeito difícil…"
+  ],
+  "cenas": [
+   "Conte o cenário inicial: \"Estava fazendo ___ e parecia tudo certo.\"",
+   "Mostre o problema inesperado: \"De repente ___ (mostre o erro).\"",
+   "Explique a solução: \"Aprendi que se você fizer ___, evita isso.\""
+  ],
+  "conclusao": "“Já passou por isso? Conta aqui!”"
+ },
+ {
+  "id": 157,
+  "ganchos": [
+   "Você usa isso? Aposto que nunca pensou nisso!",
+   "Um uso totalmente diferente pra isso.",
+   "Olha que ideia simples!"
+  ],
+  "cenas": [
+   "Mostre o objeto/ferramenta: \"Isso aqui normalmente serve pra ___.\"",
+   "Mostre o uso novo: \"Mas olha o que dá pra fazer: ___.\"",
+   "Demonstre aplicando: Corte mostrando o processo"
+  ],
+  "conclusao": "“Vai usar assim também? Me conta!”"
+ },
+ {
+  "id": 158,
+  "ganchos": [
+   "Descobri isso sozinho e mudou tudo!",
+   "Quase ninguém fala disso.",
+   "Esse truque é valioso."
+  ],
+  "cenas": [
+   "Mostre o jeito comum: \"Todo mundo faz ___ desse jeito.\"",
+   "Mostre o truque escondido: \"Mas se você fizer ___, o resultado é incrível.\"",
+   "Demonstre antes/depois: Mostre a diferença visual"
+  ],
+  "conclusao": "“Gostou do truque? Salva o vídeo!”"
+ },
+ {
+  "id": 159,
+  "ganchos": [
+   "Em 1 minuto você pode fazer isso!",
+   "Eu não acreditei que seria tão rápido.",
+   "Olha só…"
+  ],
+  "cenas": [
+   "Mostre materiais básicos: \"Peguei só ___ e ___.\"",
+   "Explique a ideia: \"Resolvi criar ___ (produto final).\"",
+   "Mostre o processo rápido: Corte com velocidade acelerada"
+  ],
+  "conclusao": "“Ficou top? Me conta!”"
+ },
+ {
+  "id": 160,
+  "ganchos": [
+   "Pouca gente repara nisso…",
+   "Esse detalhe faz parecer profissional.",
+   "Olha a diferença!"
+  ],
+  "cenas": [
+   "Mostre algo quase pronto: \"Assim já tá bom, mas falta algo…\"",
+   "Mostre o toque secreto: \"Eu sempre faço ___ no final.\"",
+   "Mostre o resultado: Antes/depois lado a lado"
+  ],
+  "conclusao": "“Já fazia isso? Conta aqui!”"
+ },
+ {
+  "id": 161,
+  "ganchos": [
+   "Não gaste dinheiro pra resolver isso!",
+   "Basta fazer isso antes…",
+   "Olha só que simples!"
+  ],
+  "cenas": [
+   "Mostre o erro caro: \"Muita gente faz ___ e depois tem que gastar com ___.\"",
+   "Mostre a prevenção: \"Eu faço isso aqui antes e nunca mais precisei gastar: ___.\"",
+   "Demonstre o passo: Corte mostrando aplicação"
+  ],
+  "conclusao": "“Vai usar essa dica? Me fala!”"
+ },
+ {
+  "id": 162,
+  "ganchos": [
+   "Quem consegue fazer isso?",
+   "Esse desafio é só pros brabos!",
+   "Tenta aí e me marca!"
+  ],
+  "cenas": [
+   "Explique o desafio: \"Você tem que ___ em ___ segundos.\"",
+   "Mostre você tentando: Grave em tempo real, com emoção",
+   "Mostre o resultado: \"Consegui? Olha só!\""
+  ],
+  "conclusao": "“Quem topa o desafio? Comenta aqui!”"
+ },
+ {
+  "id": 163,
+  "ganchos": [
+   "Depois de muitos erros, descobri isso.",
+   "Essa é minha maior lição.",
+   "Pouca gente compartilha isso…"
+  ],
+  "cenas": [
+   "Conte o contexto: \"Quando comecei, eu ___ e sempre dava errado.\"",
+   "Revele a descoberta: \"Até que percebi que precisava ___.\"",
+   "Mostre como aplicar: Demonstre na prática"
+  ],
+  "conclusao": "“Valeu a dica? Me fala!”"
+ },
+ {
+  "id": 164,
+  "ganchos": [
+   "Você jogaria isso fora?",
+   "Olha no que eu transformei!",
+   "Nunca mais desperdice isso!"
+  ],
+  "cenas": [
+   "Mostre o item sem valor: \"Isso aqui parecia inútil: ___.\"",
+   "Mostre a ideia criativa: \"Eu resolvi usar pra ___.\"",
+   "Mostre o processo rápido: Corte mostrando execução"
+  ],
+  "conclusao": "“Gostou? Salva pra testar!”"
+ },
+ {
+  "id": 165,
+  "ganchos": [
+   "Esse passo extra deixa tudo incrível!",
+   "Olha como muda com isso.",
+   "Você precisa experimentar."
+  ],
+  "cenas": [
+   "Mostre o resultado básico: \"Assim já tá bom, mas olha isso…\"",
+   "Mostre o passo extra: \"Se você fizer ___, fica muito melhor.\"",
+   "Mostre o resultado final: Antes/depois lado a lado"
+  ],
+  "conclusao": "“Vai aplicar esse passo? Me conta!”"
+ },
+ {
+  "id": 166,
+  "ganchos": [
+   "Você está travando seu progresso sem perceber!",
+   "Esse detalhe está te segurando.",
+   "Eu fazia isso e não evoluía…"
+  ],
+  "cenas": [
+   "Mostre o comportamento comum: \"Eu sempre fazia ___ achando que ajudava.\"",
+   "Revele o impacto negativo: \"Isso me fazia perder ___.\"",
+   "Mostre o que fazer: \"Troquei por ___ e tudo mudou.\""
+  ],
+  "conclusao": "“Você já fez isso? Comenta aqui!”"
+ },
+ {
+  "id": 167,
+  "ganchos": [
+   "Quer que seu trabalho pareça mais caro?",
+   "Esse toque final faz parecer de luxo.",
+   "Pouca gente faz isso!"
+  ],
+  "cenas": [
+   "Mostre o produto simples: \"Assim já tá legal…\"",
+   "Mostre o detalhe final: \"Mas se você fizer isso: ___, fica incrível.\"",
+   "Mostre o resultado visual: Compare antes/depois"
+  ],
+  "conclusao": "“Quem vai usar isso? Me conta!”"
+ },
+ {
+  "id": 168,
+  "ganchos": [
+   "Você não precisa de muito pra fazer isso!",
+   "Olha só o que eu criei com pouco.",
+   "Você também consegue."
+  ],
+  "cenas": [
+   "Mostre os recursos limitados: \"Eu só tinha ___ e ___.\"",
+   "Explique o que queria criar: \"Queria fazer ___.\"",
+   "Mostre o processo: Corte rápido com execução"
+  ],
+  "conclusao": "“Gostou da ideia? Salva aí!”"
+ },
+ {
+  "id": 169,
+  "ganchos": [
+   "Esse passo faz toda a diferença e ninguém comenta!",
+   "Você provavelmente pula isso…",
+   "Repara nisso!"
+  ],
+  "cenas": [
+   "Mostre o fluxo normal: \"Todo mundo faz ___ e acha que está pronto.\"",
+   "Mostre o passo extra: \"Mas se você fizer ___, o resultado melhora muito.\"",
+   "Demonstre na prática: Mostre aplicando no vídeo"
+  ],
+  "conclusao": "“Você já fazia isso? Comenta!”"
+ },
+ {
+  "id": 170,
+  "ganchos": [
+   "Isso vai te salvar!",
+   "Problema comum? Resolve assim.",
+   "Em segundos, tá pronto."
+  ],
+  "cenas": [
+   "Mostre o problema: \"Quando você faz ___, sempre acontece ___.\"",
+   "Mostre a solução rápida: \"Basta fazer isso: ___.\"",
+   "Mostre o resultado: \"Olha como ficou depois!\""
+  ],
+  "conclusao": "“Vai usar essa dica? Me conta!”"
+ },
+ {
+  "id": 171,
+  "ganchos": [
+   "Depois de errar várias vezes, descobri isso.",
+   "Isso vai te poupar muito esforço.",
+   "Aprendi do jeito difícil!"
+  ],
+  "cenas": [
+   "Conte os erros: \"Eu tentava fazer ___ e sempre dava errado.\"",
+   "Revele a lição: \"Até que descobri ___.\"",
+   "Mostre como aplicar: Demonstre na prática"
+  ],
+  "conclusao": "“Valeu a dica? Comenta aqui!”"
+ },
+ {
+  "id": 172,
+  "ganchos": [
+   "Esse toque faz tudo se destacar!",
+   "Olha a diferença com esse detalhe.",
+   "Parece profissional!"
+  ],
+  "cenas": [
+   "Mostre algo finalizado sem graça: \"Assim tá bom…\"",
+   "Mostre o detalhe especial: \"Mas se fizer isso: ___, fica incrível.\"",
+   "Mostre o resultado lado a lado: Antes/depois"
+  ],
+  "conclusao": "“Quem vai testar? Me conta!”"
+ },
+ {
+  "id": 173,
+  "ganchos": [
+   "Não precisa gastar mais pra ter resultado rápido!",
+   "Esse truque economiza tempo e dinheiro.",
+   "Olha só!"
+  ],
+  "cenas": [
+   "Mostre o processo caro/lento: \"Normalmente você faz ___ e leva ___.\"",
+   "Mostre o truque: \"Mas assim: ___, resolve muito mais rápido.\"",
+   "Demonstre aplicando: Corte com execução rápida"
+  ],
+  "conclusao": "“Gostou? Salva o vídeo!”"
+ },
+ {
+  "id": 174,
+  "ganchos": [
+   "Você sabe usar isso direito?",
+   "Muita gente erra aqui…",
+   "Testa aí e me marca!"
+  ],
+  "cenas": [
+   "Mostre o objeto/técnica: \"Todo mundo tem ___ mas usa assim: ___.\"",
+   "Mostre o jeito certo: \"O certo é usar assim: ___.\"",
+   "Mostre o resultado: \"Olha a diferença!\""
+  ],
+  "conclusao": "“Você fazia certo? Comenta!”"
+ },
+ {
+  "id": 175,
+  "ganchos": [
+   "Esse toque final faz todo mundo dizer UAU!",
+   "Pouca gente sabe disso.",
+   "Você precisa tentar isso!"
+  ],
+  "cenas": [
+   "Mostre algo finalizado simples: \"Tá vendo isso? Assim já tá bom…\"",
+   "Mostre o truque final: \"Mas se fizer isso aqui: ___, fica incrível!\"",
+   "Mostre a reação visual: Antes/depois no vídeo"
+  ],
+  "conclusao": "“Vai aplicar? Me conta!”"
+ },
+ {
+  "id": 176,
+  "ganchos": [
+   "Você não percebe, mas isso muda tudo.",
+   "Olha o que está escondido aqui!",
+   "Depois que eu vi isso, nunca mais errei."
+  ],
+  "cenas": [
+   "Mostre algo pronto: \"Todo mundo olha isso e acha que está certo…\"",
+   "Aproxime e destaque o detalhe: \"Mas repara nisso aqui: ___.\"",
+   "Explique o impacto: \"Isso faz diferença porque ___.\""
+  ],
+  "conclusao": "“Já tinha visto isso? Comenta!”"
+ },
+ {
+  "id": 177,
+  "ganchos": [
+   "Quer parecer expert? Faz isso.",
+   "Esse truque é usado pelos melhores.",
+   "Você também consegue!"
+  ],
+  "cenas": [
+   "Mostre o jeito básico: \"Se você fizer assim: ___, fica básico.\"",
+   "Mostre o método profissional: \"Mas se fizer desse jeito: ___, fica nível avançado.\"",
+   "Demonstre na prática: Antes/depois lado a lado"
+  ],
+  "conclusao": "“Gostou do truque? Salva aí!”"
+ },
+ {
+  "id": 178,
+  "ganchos": [
+   "Você não precisa perder tempo com isso!",
+   "Resolva assim em 30 segundos.",
+   "Olha como é simples."
+  ],
+  "cenas": [
+   "Mostre o problema: \"Normalmente demora muito pra ___.\"",
+   "Mostre o truque rápido: \"Mas se fizer isso: ___, resolve na hora.\"",
+   "Mostre o processo rápido: Corte acelerado"
+  ],
+  "conclusao": "“Vai testar? Me conta!”"
+ },
+ {
+  "id": 179,
+  "ganchos": [
+   "Todo mundo joga fora, mas olha isso!",
+   "Transformei isso em algo útil.",
+   "Você vai querer fazer também."
+  ],
+  "cenas": [
+   "Mostre o item descartável: \"Isso aqui ia pro lixo: ___.\"",
+   "Explique a ideia: \"Resolvi transformar em ___.\"",
+   "Mostre o processo: Corte mostrando as etapas"
+  ],
+  "conclusao": "“Gostou da ideia? Salva!”"
+ },
+ {
+  "id": 180,
+  "ganchos": [
+   "Esse cuidado te poupa horas de trabalho.",
+   "Nunca mais refaça isso!",
+   "Pouca gente faz isso."
+  ],
+  "cenas": [
+   "Mostre o problema comum: \"Quando você esquece ___, precisa refazer tudo.\"",
+   "Mostre o cuidado essencial: \"Eu sempre faço isso antes: ___.\"",
+   "Mostre aplicando: Corte com detalhe visual"
+  ],
+  "conclusao": "“Vai adotar? Me conta!”"
+ },
+ {
+  "id": 181,
+  "ganchos": [
+   "Você sabia que essa ferramenta faz isso?",
+   "Olha esse recurso secreto!",
+   "Você vai usar muito isso!"
+  ],
+  "cenas": [
+   "Mostre a ferramenta comum: \"Todo mundo usa pra ___.\"",
+   "Revele a função oculta: \"Mas se você apertar/fizer ___, ela faz ___.\"",
+   "Mostre o resultado: Demonstre na prática"
+  ],
+  "conclusao": "“Sabia disso? Comenta aqui!”"
+ },
+ {
+  "id": 182,
+  "ganchos": [
+   "Esse detalhe vai fazer todo mundo dizer: uau!",
+   "Simples e impressionante.",
+   "Olha só a diferença!"
+  ],
+  "cenas": [
+   "Mostre o jeito simples: \"Assim tá legal…\"",
+   "Mostre o truque: \"Mas se você fizer ___, fica incrível.\"",
+   "Mostre o resultado final: Antes/depois bem claro"
+  ],
+  "conclusao": "“Vai usar esse truque? Me conta!”"
+ },
+ {
+  "id": 183,
+  "ganchos": [
+   "Faça isso antes e evite dor de cabeça.",
+   "Nunca mais passe por isso.",
+   "Esse detalhe te salva!"
+  ],
+  "cenas": [
+   "Mostre o problema recorrente: \"Toda vez que você faz ___, pode acontecer ___.\"",
+   "Explique o motivo: \"Isso acontece porque ___.\"",
+   "Mostre a prevenção: \"Então faça isso antes: ___.\""
+  ],
+  "conclusao": "“Você já fazia assim? Comenta!”"
+ },
+ {
+  "id": 184,
+  "ganchos": [
+   "Olha só o que dá pra fazer rapidinho!",
+   "Você não acredita que é tão fácil.",
+   "Fiz isso em minutos!"
+  ],
+  "cenas": [
+   "Mostre materiais simples: \"Peguei só ___ e ___.\"",
+   "Mostre a ideia: \"Resolvi criar ___.\"",
+   "Mostre o processo acelerado: Corte com detalhes do passo a passo"
+  ],
+  "conclusao": "“Gostou? Marca alguém!”"
+ },
+ {
+  "id": 185,
+  "ganchos": [
+   "Pouca gente nota isso, mas faz toda diferença!",
+   "Olha esse toque final…",
+   "Você precisa tentar isso."
+  ],
+  "cenas": [
+   "Mostre algo pronto: \"Assim tá bom, mas espera…\"",
+   "Mostre o toque: \"Adicionando isso: ___, muda completamente.\"",
+   "Mostre o resultado: Antes/depois bem claro"
+  ],
+  "conclusao": "“Quem vai testar? Comenta!”"
+ },
+ {
+  "id": 186,
+  "ganchos": [
+   "90% das pessoas fazem isso errado!",
+   "Olha o jeito certo…",
+   "Você faz assim também?"
+  ],
+  "cenas": [
+   "Mostre o jeito errado: \"A maioria faz ___ assim e acaba dando nisso: ___.\"",
+   "Explique por que está errado: \"Isso acontece porque ___.\"",
+   "Mostre o jeito certo: \"O certo é fazer assim: ___ (demonstre).\""
+  ],
+  "conclusao": "“Você fazia errado também? Conta aqui!”"
+ },
+ {
+  "id": 187,
+  "ganchos": [
+   "Nunca mais passe por esse problema!",
+   "Esse detalhe evita muita dor de cabeça.",
+   "Você precisa saber disso."
+  ],
+  "cenas": [
+   "Mostre o problema comum: \"Sempre que faço ___, acontecia ___.\"",
+   "Mostre a solução: \"Até que descobri que se fizer ___, nunca mais acontece.\"",
+   "Mostre o truque na prática: Corte rápido aplicando a dica"
+  ],
+  "conclusao": "“Vai usar essa dica? Salva aí!”"
+ },
+ {
+  "id": 188,
+  "ganchos": [
+   "Só isso e já fica incrível!",
+   "Você não precisa de mais nada.",
+   "Olha como ficou!"
+  ],
+  "cenas": [
+   "Mostre materiais mínimos: \"Peguei só ___ e ___.\"",
+   "Mostre a ideia: \"Com isso, resolvi criar ___.\"",
+   "Mostre o processo simples: Corte mostrando execução"
+  ],
+  "conclusao": "“Gostou do resultado? Comenta!”"
+ },
+ {
+  "id": 189,
+  "ganchos": [
+   "Esse passo faz toda a diferença!",
+   "Ninguém te conta isso, mas aqui está…",
+   "Olha só!"
+  ],
+  "cenas": [
+   "Mostre o fluxo padrão: \"Muita gente faz ___ assim.\"",
+   "Revele o passo secreto: \"Mas se fizer isso aqui no meio: ___.\"",
+   "Mostre aplicando: Demonstre na prática"
+  ],
+  "conclusao": "“Já usava isso? Conta aqui!”"
+ },
+ {
+  "id": 190,
+  "ganchos": [
+   "Não desperdice mais nada!",
+   "Esse truque faz render muito mais.",
+   "Olha só a diferença!"
+  ],
+  "cenas": [
+   "Mostre o desperdício: \"Quando faz ___ desse jeito, você perde ___.\"",
+   "Mostre o truque: \"Mas se fizer assim: ___, aproveita tudo.\"",
+   "Mostre a aplicação: Corte mostrando o antes/depois"
+  ],
+  "conclusao": "“Vai aplicar? Me fala!”"
+ },
+ {
+  "id": 191,
+  "ganchos": [
+   "Você consegue fazer isso em 15 segundos?",
+   "Poucos conseguem na primeira tentativa!",
+   "Tenta aí e me marca!"
+  ],
+  "cenas": [
+   "Explique o desafio: \"Tente fazer ___ em apenas 15 segundos.\"",
+   "Mostre você tentando: Grave sua tentativa com emoção",
+   "Mostre o resultado: \"Consegui? Olha só…\""
+  ],
+  "conclusao": "“Agora é sua vez!”"
+ },
+ {
+  "id": 192,
+  "ganchos": [
+   "Quer que pareça caro? Faz isso!",
+   "Esse detalhe valoriza tudo.",
+   "Olha só a diferença!"
+  ],
+  "cenas": [
+   "Mostre algo básico: \"Assim já tá bom…\"",
+   "Mostre o toque especial: \"Mas com isso: ___, parece luxo.\"",
+   "Mostre o resultado: Antes/depois lado a lado"
+  ],
+  "conclusao": "“Gostou do truque? Salva!”"
+ },
+ {
+  "id": 193,
+  "ganchos": [
+   "Isso tava esquecido aqui…",
+   "Olha o que eu fiz com isso!",
+   "Nunca mais jogue fora."
+  ],
+  "cenas": [
+   "Mostre o objeto antigo: \"Achei isso aqui: ___.\"",
+   "Mostre a ideia: \"Resolvi transformar em ___.\"",
+   "Mostre o processo: Corte mostrando execução"
+  ],
+  "conclusao": "“Gostou? Comenta aqui!”"
+ },
+ {
+  "id": 194,
+  "ganchos": [
+   "Você está perdendo tempo sem perceber!",
+   "Esse truque me salvou!",
+   "Olha como é fácil."
+  ],
+  "cenas": [
+   "Mostre o processo demorado: \"Antes eu fazia ___ e levava horas.\"",
+   "Mostre o truque rápido: \"Mas agora eu faço assim: ___.\"",
+   "Mostre aplicando: Corte acelerado"
+  ],
+  "conclusao": "“Quem vai testar? Me conta!”"
+ },
+ {
+  "id": 195,
+  "ganchos": [
+   "Falta só isso pra ficar perfeito!",
+   "Olha a diferença com esse detalhe.",
+   "Você precisa experimentar!"
+  ],
+  "cenas": [
+   "Mostre algo quase pronto: \"Assim já tá legal, mas olha isso…\"",
+   "Mostre o detalhe final: \"Se você fizer ___, fica perfeito.\"",
+   "Mostre o resultado final: Antes/depois bem visível"
+  ],
+  "conclusao": "“Vai aplicar? Me conta!”"
+ },
+ {
+  "id": 196,
+  "ganchos": [
+   "Você não vai acreditar nisso!",
+   "Esse truque estava escondido.",
+   "Olha o que eu descobri!"
+  ],
+  "cenas": [
+   "Mostre o método comum: \"Todo mundo faz ___ assim.\"",
+   "Revele o truque secreto: \"Mas se fizer isso: ___, o resultado muda.\"",
+   "Demonstre na prática: Mostre antes/depois"
+  ],
+  "conclusao": "“Você já sabia disso? Comenta!”"
+ },
+ {
+  "id": 197,
+  "ganchos": [
+   "Isso deu errado, mas olha no que virou!",
+   "Nunca mais vou desperdiçar isso.",
+   "Você vai adorar essa ideia."
+  ],
+  "cenas": [
+   "Mostre o erro inicial: \"Eu fiz ___ e saiu assim: ___.\"",
+   "Explique a ideia: \"Resolvi aproveitar para ___.\"",
+   "Mostre o resultado final: \"Olha como ficou incrível!\""
+  ],
+  "conclusao": "“Já fez algo assim? Conta aqui!”"
+ },
+ {
+  "id": 198,
+  "ganchos": [
+   "Tá pulando isso e nem percebe!",
+   "Esse detalhe faz diferença no resultado.",
+   "Olha só…"
+  ],
+  "cenas": [
+   "Mostre o fluxo padrão: \"Muita gente faz ___ e esquece ___.\"",
+   "Explique o impacto: \"Isso compromete ___.\"",
+   "Mostre o passo essencial: \"Se fizer ___, resolve na hora.\""
+  ],
+  "conclusao": "“Vai começar a usar? Me conta!”"
+ },
+ {
+  "id": 199,
+  "ganchos": [
+   "Quer economizar tempo? Faz isso!",
+   "Eu demorei anos pra descobrir isso.",
+   "Olha como é fácil!"
+  ],
+  "cenas": [
+   "Mostre o processo demorado: \"Antes eu fazia ___ e perdia muito tempo.\"",
+   "Mostre o truque rápido: \"Agora eu só faço isso: ___.\"",
+   "Mostre na prática: Corte mostrando o resultado"
+  ],
+  "conclusao": "“Vai testar? Salva o vídeo!”"
+ },
+ {
+  "id": 200,
+  "ganchos": [
+   "Quer ter resultados sempre? Faz isso!",
+   "Pouca gente aplica, mas funciona.",
+   "Eu só aprendi na prática."
+  ],
+  "cenas": [
+   "Explique o problema: \"Fazer ___ uma vez não resolve.\"",
+   "Mostre o segredo: \"Mas se fizer ___ sempre, garante ___.\"",
+   "Mostre aplicando: Corte mostrando a rotina"
+  ],
+  "conclusao": "“Você já faz assim? Comenta!”"
+ },
+ {
+  "id": 201,
+  "ganchos": [
+   "Olha só o resultado depois desse detalhe!",
+   "Parece profissional!",
+   "Você vai querer tentar isso."
+  ],
+  "cenas": [
+   "Mostre algo pronto simples: \"Assim já tá bom, mas…\"",
+   "Mostre o detalhe aplicado: \"Quando eu faço ___ no final, fica incrível.\"",
+   "Mostre o antes/depois: Corte comparativo"
+  ],
+  "conclusao": "“Gostou do toque? Me conta!”"
+ },
+ {
+  "id": 202,
+  "ganchos": [
+   "Isso tava quebrado, mas olha no que virou!",
+   "Nunca mais jogue fora.",
+   "Você também pode fazer!"
+  ],
+  "cenas": [
+   "Mostre o item quebrado: \"Achei isso aqui quebrado: ___.\"",
+   "Mostre a ideia: \"Resolvi usar pra ___.\"",
+   "Mostre o processo: Corte mostrando execução"
+  ],
+  "conclusao": "“Já fez isso? Comenta!”"
+ },
+ {
+  "id": 203,
+  "ganchos": [
+   "Cansado disso acontecer? Faz isso!",
+   "Esse truque vai te salvar!",
+   "Olha como resolve fácil."
+  ],
+  "cenas": [
+   "Mostre o problema: \"Toda vez que faço ___, acontece ___.\"",
+   "Mostre a solução: \"Mas fazendo assim: ___, nunca mais.\"",
+   "Mostre aplicando: Corte mostrando execução"
+  ],
+  "conclusao": "“Vai usar? Me conta!”"
+ },
+ {
+  "id": 204,
+  "ganchos": [
+   "Não precisa de horas pra isso!",
+   "Olha o que dá pra fazer rapidinho.",
+   "Você vai querer tentar!"
+  ],
+  "cenas": [
+   "Mostre materiais simples: \"Usei só ___ e ___.\"",
+   "Mostre a ideia: \"Resolvi criar ___.\"",
+   "Mostre o processo rápido: Corte mostrando etapas"
+  ],
+  "conclusao": "“Gostou? Marca alguém!”"
+ },
+ {
+  "id": 205,
+  "ganchos": [
+   "Esse detalhe faz você parecer um expert!",
+   "Quase ninguém faz isso.",
+   "Olha como muda o resultado."
+  ],
+  "cenas": [
+   "Mostre o jeito comum: \"Muita gente faz ___ assim.\"",
+   "Mostre o detalhe de expert: \"Mas se fizer ___, fica nível profissional.\"",
+   "Mostre antes/depois: Comparação clara"
+  ],
+  "conclusao": "“Vai usar essa dica? Me conta!”"
+ }
+]
