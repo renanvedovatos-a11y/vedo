@@ -154,6 +154,16 @@ app.get("/api/health", (_req, res) => {
     google: googleStatus(),
     windsor: { configured: Boolean(process.env.WINDSOR_API_KEY) },
     stt: Boolean(process.env.GROQ_API_KEY),
+    // Contagem da biblioteca de templates: já ficou ausente em produção uma vez
+    // (o .gitignore engolia src/data/), e o sintoma só aparecia no gerador de
+    // temas. Aqui dá pra ver na hora, sem precisar entrar no painel.
+    templates: (() => {
+      try {
+        return biblioteca().length;
+      } catch {
+        return 0;
+      }
+    })(),
     t: Date.now(),
   });
 });
