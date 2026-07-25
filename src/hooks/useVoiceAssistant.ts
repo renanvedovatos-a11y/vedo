@@ -22,7 +22,7 @@ interface SpeechRecognitionLike {
   onspeechstart: (() => void) | null;
 }
 
-const IS_IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+export const IS_IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 function createRecognition(): SpeechRecognitionLike | null {
   const Ctor =
@@ -211,7 +211,23 @@ export function useVoiceAssistant() {
   const stopListening = useCallback(() => {
     stoppingRef.current = true;
     clearSilenceTimer();
-    recRef.current?.stop();
+    const rec = recRef.current;
+    rec?.stop();
+    // Safari/iOS às vezes NÃO dispara onend depois do stop() quando nenhum
+    // áudio foi captado — sem isto a tela ficava presa em "Ouvindo…".
+    setTimeout(() => {
+      if (rec && recRef.current === rec) {
+        try {
+          rec.abort();
+        } catch {
+          /* já morta */
+        }
+        recRef.current = null;
+        audioEngine.stop();
+        setInterim("");
+        setStatus("idle");
+      }
+    }, 1500);
   }, [clearSilenceTimer]);
 
   const startListening = useCallback(async () => {
@@ -316,6 +332,92 @@ export function useVoiceAssistant() {
     rec.start();
   }, [status, process, clearSilenceTimer, stopListening]);
 
+  // ---------- gravação + transcrição no servidor (caminho do iPhone) ----------
+  // O Web Speech do Safari/iOS é quebrado pra muita gente (fica "ouvindo" sem
+  // nunca entregar texto). Quando o servidor tem STT (GROQ_API_KEY), o iPhone
+  // grava o áudio com MediaRecorder e manda pro /api/transcrever.
+  const sttServidorRef = useRef(false);
+  useEffect(() => {
+    fetch("/api/health")
+      .then((r) => r.json())
+      .then((d) => {
+        sttServidorRef.current = Boolean(d.stt);
+      })
+      .catch(() => {});
+  }, []);
+
+  const mediaRef = useRef<MediaRecorder | null>(null);
+  const chunksRef = useRef<Blob[]>([]);
+  const streamRef = useRef<MediaStream | null>(null);
+
+  const pararGravacao = useCallback(() => {
+    try {
+      mediaRef.current?.stop();
+    } catch {
+      /* já parada */
+    }
+  }, []);
+
+  const iniciarGravacao = useCallback(async () => {
+    setError(null);
+    let stream: MediaStream;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    } catch {
+      setError(erroAmigavel("not-allowed"));
+      return;
+    }
+    const mime =
+      ["audio/mp4", "audio/webm;codecs=opus", "audio/webm"].find(
+        (m) => typeof MediaRecorder !== "undefined" && MediaRecorder.isTypeSupported(m),
+      ) ?? "";
+    const mr = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
+    chunksRef.current = [];
+    streamRef.current = stream;
+
+    mr.ondataavailable = (e) => {
+      if (e.data.size > 0) chunksRef.current.push(e.data);
+    };
+    mr.onstop = async () => {
+      streamRef.current?.getTracks().forEach((t) => t.stop());
+      streamRef.current = null;
+      mediaRef.current = null;
+      const blob = new Blob(chunksRef.current, { type: mr.mimeType || "audio/mp4" });
+      chunksRef.current = [];
+      setInterim("");
+      // Gravação minúscula = toque acidental; volta ao repouso sem chamar a API.
+      if (blob.size < 2000) {
+        setStatus("idle");
+        return;
+      }
+      setStatus("processing");
+      try {
+        const res = await fetch("/api/transcrever", {
+          method: "POST",
+          headers: { "Content-Type": blob.type },
+          body: blob,
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error ?? `Erro ${res.status}`);
+        const texto = String(data.text ?? "").trim();
+        if (texto) {
+          void process(texto);
+        } else {
+          setError("Não entendi o áudio — tente falar mais perto do microfone.");
+          setStatus("idle");
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : String(err));
+        setStatus("idle");
+      }
+    };
+
+    mediaRef.current = mr;
+    setStatus("listening");
+    setInterim("Gravando… toque de novo para enviar.");
+    mr.start();
+  }, [process]);
+
   // ---------- modo "Olá VEDO" (palavra de ativação) ----------
   // Uma escuta de fundo, leve, que só procura a saudação. Ao ouvir "olá vedo"
   // começa a escuta de verdade; se vier comando junto ("olá vedo, briefing"),
@@ -412,14 +514,18 @@ export function useVoiceAssistant() {
 
   const toggleMic = useCallback(() => {
     if (status === "listening") {
-      stopListening();
+      if (mediaRef.current) pararGravacao();
+      else stopListening();
     } else if (status === "speaking") {
       window.speechSynthesis?.cancel();
       setStatus("idle");
     } else if (status === "idle") {
-      void startListening();
+      // iPhone com STT no servidor: grava e transcreve (o Web Speech do iOS
+      // é instável). Nos demais, reconhecimento nativo do navegador.
+      if (IS_IOS && sttServidorRef.current) void iniciarGravacao();
+      else void startListening();
     }
-  }, [status, startListening, stopListening]);
+  }, [status, startListening, stopListening, iniciarGravacao, pararGravacao]);
 
   const sendText = useCallback(
     (text: string) => {

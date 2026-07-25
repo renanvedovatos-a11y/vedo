@@ -125,9 +125,48 @@ app.get("/api/health", (_req, res) => {
     model: MODEL,
     google: googleStatus(),
     windsor: { configured: Boolean(process.env.WINDSOR_API_KEY) },
+    stt: Boolean(process.env.GROQ_API_KEY),
     t: Date.now(),
   });
 });
+
+// ---------- transcrição de áudio no servidor (Whisper via Groq) ----------
+// O iPhone/Safari tem o Web Speech quebrado pra muita gente; lá o painel grava
+// o áudio (MediaRecorder) e manda pra cá. Requer GROQ_API_KEY (grátis).
+app.post(
+  "/api/transcrever",
+  express.raw({ type: () => true, limit: "25mb" }),
+  async (req, res) => {
+    try {
+      if (!process.env.GROQ_API_KEY) {
+        res.status(400).json({
+          error: "Transcrição no servidor não configurada (falta GROQ_API_KEY).",
+        });
+        return;
+      }
+      if (!req.body?.length) {
+        res.status(400).json({ error: "Áudio vazio." });
+        return;
+      }
+      const tipo = req.headers["content-type"] || "audio/mp4";
+      const ext = tipo.includes("webm") ? "webm" : tipo.includes("ogg") ? "ogg" : "mp4";
+      const form = new FormData();
+      form.append("file", new Blob([req.body], { type: tipo }), `audio.${ext}`);
+      form.append("model", "whisper-large-v3-turbo");
+      form.append("language", "pt");
+      const r = await fetch("https://api.groq.com/openai/v1/audio/transcriptions", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${process.env.GROQ_API_KEY}` },
+        body: form,
+      });
+      const json = await r.json().catch(() => ({}));
+      if (!r.ok) throw new Error(json?.error?.message || `Groq respondeu ${r.status}`);
+      res.json({ text: json.text ?? "" });
+    } catch (err) {
+      res.status(500).json({ error: err?.message ?? String(err) });
+    }
+  },
+);
 
 app.get("/api/system", (_req, res) => {
   res.json(systemStats());

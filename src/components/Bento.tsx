@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { AssistantStatus } from "../hooks/useVoiceAssistant";
+import { IS_IOS, type AssistantStatus } from "../hooks/useVoiceAssistant";
 import { VoiceOrb } from "./VoiceOrb";
 
 /* ---------- tipos ---------- */
@@ -345,7 +345,11 @@ export function VoiceCell({
   setWakeAtivo: (on: boolean) => void;
 }) {
   const statusTxt =
-    status === "idle" && wakeAtivo ? "Diga “Olá VEDO” ou toque" : STATUS_TXT[status];
+    IS_IOS && status === "listening"
+      ? "Gravando… toque para enviar"
+      : status === "idle" && wakeAtivo
+        ? "Diga “Olá VEDO” ou toque"
+        : STATUS_TXT[status];
   return (
     <div className="cell voice-cell">
       <VoiceOrb status={status} size={150} onClick={onMicToggle} title={statusTxt} />
@@ -367,15 +371,19 @@ export function VoiceCell({
           ▶
         </button>
       </div>
-      <label className="wake-toggle" title="Com isso ligado, basta dizer “Olá VEDO” com a página aberta">
-        <input
-          type="checkbox"
-          checked={wakeAtivo}
-          onChange={(e) => setWakeAtivo(e.target.checked)}
-        />
-        <span className="wake-track"><i /></span>
-        Ativar dizendo “Olá VEDO”
-      </label>
+      {/* O "Olá VEDO" depende do reconhecimento contínuo do navegador, que o
+          iPhone não entrega — lá o microfone funciona por gravação (toque). */}
+      {!IS_IOS && (
+        <label className="wake-toggle" title="Com isso ligado, basta dizer “Olá VEDO” com a página aberta">
+          <input
+            type="checkbox"
+            checked={wakeAtivo}
+            onChange={(e) => setWakeAtivo(e.target.checked)}
+          />
+          <span className="wake-track"><i /></span>
+          Ativar dizendo “Olá VEDO”
+        </label>
+      )}
     </div>
   );
 }
