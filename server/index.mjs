@@ -717,6 +717,12 @@ app.post("/api/chat/stream", async (req, res) => {
   res.setHeader("Connection", "keep-alive");
   res.setHeader("X-Accel-Buffering", "no"); // proxies não podem bufferizar SSE
   res.flushHeaders?.();
+  // Proxies (o do Render inclusive) só repassam a resposta depois de encher o
+  // buffer. Um comentário grande logo de cara força o primeiro flush, e o
+  // heartbeat mantém o canal aberto durante as pausas de ferramenta — sem
+  // isso o texto chegaria todo de uma vez, que é o oposto do objetivo.
+  res.write(`:${" ".repeat(2048)}\n\n`);
+  const heartbeat = setInterval(() => res.write(": ping\n\n"), 15000);
   const enviar = (evento) => res.write(`data: ${JSON.stringify(evento)}\n\n`);
 
   const client = new Anthropic();
@@ -813,6 +819,7 @@ app.post("/api/chat/stream", async (req, res) => {
   } catch (err) {
     enviar({ tipo: "erro", erro: err?.message ?? String(err) });
   }
+  clearInterval(heartbeat);
   res.end();
 });
 
