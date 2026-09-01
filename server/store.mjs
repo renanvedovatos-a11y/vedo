@@ -81,15 +81,37 @@ function supaDelete(nome) {
 
 // ---------- API pública (síncrona para os chamadores) ----------
 
-// Deve ser chamada (e aguardada) antes do app.listen quando em produção, para
-// que o cache esteja preenchido antes da primeira leitura.
+let degradado = false;
+
+// O banco não pode derrubar o assistente inteiro. Antes, uma falha aqui
+// rejeitava o await de topo do index.mjs, o processo morria no arranque e a
+// hospedagem entrava em ciclo de reinício — o VEDO sumia do ar por causa de um
+// serviço externo. Agora ele sobe mesmo assim, em modo degradado e avisando.
 export async function iniciarStore() {
-  if (usandoSupabase) {
+  if (!usandoSupabase) {
+    console.log("[store] modo arquivo local (data/).");
+    return;
+  }
+  try {
     await supaHidratar();
     console.log(`[store] Supabase conectado — ${cache.size} registro(s) carregado(s).`);
-  } else {
-    console.log("[store] modo arquivo local (data/).");
+  } catch (err) {
+    degradado = true;
+    console.error(
+      `[store] AVISO: Supabase indisponível (${err?.message ?? err}).` +
+        " O VEDO sobe mesmo assim, mas sem ler dados salvos (tarefas, tokens," +
+        " regras) e sem gravar até o banco voltar.",
+    );
   }
+}
+
+// Para o painel avisar em vez de fingir que os dados sumiram.
+export function estadoStore() {
+  return {
+    modo: usandoSupabase ? "supabase" : "arquivo",
+    degradado,
+    registros: cache.size,
+  };
 }
 
 export function ler(nome, fallback) {

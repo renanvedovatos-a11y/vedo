@@ -43,6 +43,8 @@ function Topbar({
   const [now, setNow] = useState(() => new Date());
   const [serverOk, setServerOk] = useState<boolean | null>(null);
   const [googleOff, setGoogleOff] = useState(false);
+  // Banco fora = tarefas/regras/tokens somem da tela. Sem aviso, parece perda de dados.
+  const [bancoOff, setBancoOff] = useState(false);
 
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
@@ -58,6 +60,7 @@ function Topbar({
         if (!alive) return;
         setServerOk(res.ok);
         setGoogleOff(Boolean(data.google?.configured && !data.google?.connected));
+        setBancoOff(Boolean(data.store?.degradado));
       } catch {
         if (alive) setServerOk(false);
       }
@@ -89,6 +92,15 @@ function Topbar({
         </nav>
       </div>
       <div className="topbar-right">
+        {bancoOff && (
+          <span
+            className="mic-pill"
+            style={{ color: "#ff5252", borderColor: "#3a1c1c", cursor: "default" }}
+            title="O banco (Supabase) não respondeu. Tarefas, regras e login do Google não são lidos nem gravados até ele voltar."
+          >
+            Banco fora do ar
+          </span>
+        )}
         {googleOff && (
           <button
             className="mic-pill"
