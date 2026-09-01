@@ -24,7 +24,13 @@ import {
   atualizarTarefa,
   removerTarefa,
 } from "./tools/tasks.mjs";
-import { googleStatus, getAuthUrl, handleCallback, disconnect } from "./googleAuth.mjs";
+import {
+  googleStatus,
+  getAuthUrl,
+  handleCallback,
+  disconnect,
+  registrarErroGoogle,
+} from "./googleAuth.mjs";
 import { iniciarStore } from "./store.mjs";
 import {
   authAtivo,
@@ -321,6 +327,7 @@ app.get("/api/dashboard/emails", async (req, res) => {
     const data = await listarEmails({ query, max });
     res.json({ connected: true, ...data });
   } catch (err) {
+    registrarErroGoogle(err);
     res.json({ connected: true, error: err?.message ?? String(err) });
   }
 });
@@ -349,6 +356,7 @@ app.get("/api/dashboard/agenda", async (req, res) => {
     const data = await listarEventos({ de, ate, max });
     res.json({ connected: true, ...data });
   } catch (err) {
+    registrarErroGoogle(err);
     res.json({ connected: true, error: err?.message ?? String(err) });
   }
 });

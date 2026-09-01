@@ -70,6 +70,21 @@ interface SocialData {
 }
 
 /* ---------- utilitários ---------- */
+// Erro de serviço externo é técnico e às vezes enorme (o Windsor chegou a
+// devolver um aviso de plano inteiro, que estourou o layout). Traduz para algo
+// acionável e limita o tamanho.
+export function erroAmigavel(msg?: string | null): string {
+  const m = String(msg ?? "");
+  if (/invalid_grant|expired or revoked/i.test(m)) {
+    return "O acesso ao Google expirou. Clique em 'Reconectar Google' no topo da tela.";
+  }
+  if (/Free plan|upgrade|more accounts than/i.test(m)) {
+    return "O Windsor.ai atingiu o limite do plano grátis — as métricas param até liberar uma conta ou fazer upgrade.";
+  }
+  if (!m) return "Sem dados no momento.";
+  return m.length > 160 ? m.slice(0, 160) + "…" : m;
+}
+
 export function fmt(n: number | null | undefined): string {
   if (n == null) return "—";
   if (n >= 1_000_000) return (n / 1_000_000).toFixed(1) + "M";
@@ -194,7 +209,12 @@ export function HeroInstagram({
       {!data ? (
         <div className="spark-empty">carregando…</div>
       ) : data.error || !ig ? (
-        <div className="spark-empty">{data.error ?? "Conecte o Windsor.ai no .env"}</div>
+        <div className="spark-empty">{erroAmigavel(data.error) ?? "Conecte o Windsor.ai no .env"}</div>
+      ) : !ig.followers && ig.totalViews === 0 ? (
+        <div className="spark-empty">
+          Sem dados do Windsor.ai. Uma conta ativa não zera — verifique a conexão
+          ou o limite do plano em onboard.windsor.ai.
+        </div>
       ) : (
         <>
           <div className="hero-num">{fmt(ig.followers)}</div>
@@ -239,7 +259,12 @@ export function HeroYoutube({
       {!data ? (
         <div className="spark-empty">carregando…</div>
       ) : data.error || !yt ? (
-        <div className="spark-empty">{data.error ?? "Conecte o Windsor.ai no .env"}</div>
+        <div className="spark-empty">{erroAmigavel(data.error) ?? "Conecte o Windsor.ai no .env"}</div>
+      ) : !yt.subscribers && !yt.viewCount ? (
+        <div className="spark-empty">
+          Sem dados do Windsor.ai. Verifique a conexão ou o limite do plano em
+          onboard.windsor.ai.
+        </div>
       ) : (
         <>
           <div className="hero-num">{fmt(yt.subscribers)}</div>
@@ -285,9 +310,14 @@ export function HeroAnuncios({
       {!data ? (
         <div className="spark-empty">carregando…</div>
       ) : data.error || !ad ? (
-        <div className="spark-empty">{data.error ?? "Conecte o Windsor.ai no .env"}</div>
+        <div className="spark-empty">{erroAmigavel(data.error) ?? "Conecte o Windsor.ai no .env"}</div>
       ) : ad.erro ? (
         <div className="spark-empty">{ad.erro}</div>
+      ) : ad.conectado && !ad.gasto && !ad.alcance && !ad.cliques ? (
+        <div className="spark-empty">
+          Sem dados do Windsor.ai — verifique a conexão ou o limite do plano em
+          onboard.windsor.ai.
+        </div>
       ) : !ad.conectado ? (
         <div className="spark-empty">
           Conecte sua conta de anúncios da Meta no Windsor.ai para ver os números aqui.
@@ -503,9 +533,9 @@ export function AgendaCell({
         <span>{MESES[mes]} {ano}</span>
       </div>
       {data && !data.connected ? (
-        <div className="spark-empty">Google não conectado.</div>
+        <div className="spark-empty">Google desconectado ou expirado — clique em 'Reconectar Google' no topo.</div>
       ) : data?.error ? (
-        <div className="spark-empty">{data.error}</div>
+        <div className="spark-empty">{erroAmigavel(data.error)}</div>
       ) : (
         <>
           <div className="minical">
@@ -691,9 +721,9 @@ export function AgendaModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {data && !data.connected ? (
-          <div className="spark-empty">Google não conectado.</div>
+          <div className="spark-empty">Google desconectado ou expirado — clique em 'Reconectar Google' no topo.</div>
         ) : data?.error ? (
-          <div className="spark-empty">{data.error}</div>
+          <div className="spark-empty">{erroAmigavel(data.error)}</div>
         ) : (
           <div className="cal-grid">
             {DOW.map((d) => (
@@ -797,9 +827,9 @@ export function EmailsCell({ onOpen }: { onOpen: () => void }) {
         <span>{data?.emails ? `${data.emails.length}${data.emails.length === 6 ? "+" : ""}` : ""}</span>
       </div>
       {data && !data.connected ? (
-        <div className="spark-empty">Google não conectado.</div>
+        <div className="spark-empty">Google desconectado ou expirado — clique em 'Reconectar Google' no topo.</div>
       ) : data?.error ? (
-        <div className="spark-empty">{data.error}</div>
+        <div className="spark-empty">{erroAmigavel(data.error)}</div>
       ) : !data ? (
         <div className="spark-empty">Carregando…</div>
       ) : data.emails?.length === 0 ? (
@@ -851,9 +881,9 @@ export function EmailsModal({ onClose }: { onClose: () => void }) {
         {!data ? (
           <div className="detail-loading">Carregando e-mails…</div>
         ) : !data.connected ? (
-          <div className="spark-empty">Google não conectado.</div>
+          <div className="spark-empty">Google desconectado ou expirado — clique em 'Reconectar Google' no topo.</div>
         ) : data.error ? (
-          <div className="spark-empty">{data.error}</div>
+          <div className="spark-empty">{erroAmigavel(data.error)}</div>
         ) : data.emails?.length === 0 ? (
           <div className="spark-empty">Nada por aqui.</div>
         ) : (

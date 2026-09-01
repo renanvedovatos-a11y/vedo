@@ -297,6 +297,17 @@ export async function detalheYoutube() {
 // Instagram (é a mesma conta de anúncios da Meta). Se a conta ainda não foi
 // ligada no Windsor, a API responde 400 com "No facebook account…"; tratamos
 // isso como "não conectado" (o painel mostra o passo de conectar).
+
+// O Windsor às vezes devolve uma MENSAGEM no lugar do valor do campo (ex.:
+// aviso de limite de plano). Aceitar só um código ISO de 3 letras impede que
+// esse texto vire "moeda" e apareça gigante no painel.
+function moedaDe(linhas) {
+  const achou = (linhas ?? []).find((r) =>
+    /^[A-Za-z]{3}$/.test(String(r?.account_currency ?? "").trim()),
+  );
+  return achou ? String(achou.account_currency).trim().toUpperCase() : "BRL";
+}
+
 const MOEDA_SIMBOLO = { BRL: "R$", USD: "US$", EUR: "€", GBP: "£" };
 
 function adsNaoConectado(err) {
@@ -353,8 +364,7 @@ export async function dashboardAnuncios() {
   const impressoes = soma("impressions");
   const cliques = soma("clicks");
   const alcance = soma("reach");
-  const moeda =
-    moedaLinhas.find((r) => r.account_currency)?.account_currency ?? "BRL";
+  const moeda = moedaDe(moedaLinhas);
 
   const serie = diario
     .filter((r) => r.date)
@@ -405,8 +415,7 @@ export async function detalheAnuncios() {
   const impressoes = soma("impressions");
   const cliques = soma("clicks");
   const alcance = soma("reach");
-  const moeda =
-    moedaLinhas.find((r) => r.account_currency)?.account_currency ?? "BRL";
+  const moeda = moedaDe(moedaLinhas);
 
   const serie = diario
     .filter((r) => r.date)

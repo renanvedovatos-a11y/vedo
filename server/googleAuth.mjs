@@ -31,10 +31,25 @@ function saveTokens(tokens) {
   store.gravar("google-tokens", tokens);
 }
 
+// Um token pode existir no disco e mesmo assim estar morto: quando o app está
+// em modo de teste no Google, o refresh token expira em 7 dias e as chamadas
+// falham com "invalid_grant". Sem registrar isso, o painel se dizia conectado
+// e nunca oferecia o botão de reconectar — que é justamente a saída.
+let tokenExpirado = false;
+
+export function registrarErroGoogle(err) {
+  const msg = String(err?.message ?? err);
+  if (/invalid_grant|Token has been expired or revoked/i.test(msg)) {
+    tokenExpirado = true;
+  }
+}
+
 export function googleStatus() {
+  const temToken = hasCredentials() && loadTokens() !== null;
   return {
     configured: hasCredentials(),
-    connected: hasCredentials() && loadTokens() !== null,
+    connected: temToken && !tokenExpirado,
+    expirado: temToken && tokenExpirado,
   };
 }
 
@@ -53,6 +68,7 @@ export async function handleCallback(code) {
   const existing = loadTokens();
   // Preserva o refresh_token se o Google não reenviar num re-consent.
   saveTokens({ ...existing, ...tokens });
+  tokenExpirado = false; // reconectou: volta ao normal
 }
 
 // Retorna um cliente autenticado ou lança erro com instrução amigável
